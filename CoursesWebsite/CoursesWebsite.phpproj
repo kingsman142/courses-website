@@ -20,6 +20,7 @@
     <Compile Include="index.php" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="script.js" />
     <Content Include="Site.css" />
   </ItemGroup>
 </Project>

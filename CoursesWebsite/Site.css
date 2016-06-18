@@ -1,11 +1,13 @@
 ﻿body {
+    background-color:gainsboro;
 }
 
 .column{
     display: inline-block;
     position: relative;
-    width: 33.19%;
+    width: 14.10%;
     outline: solid;
     text-align: center;
-    outline-color: black
+    outline-color: black;
+    background-color: skyblue;
 }
