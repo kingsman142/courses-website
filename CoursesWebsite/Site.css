@@ -11,3 +11,8 @@
     outline-color: black;
     background-color: skyblue;
 }
+
+#updateDatabse{
+    display: inline-block;
+    clear: both;
+}
