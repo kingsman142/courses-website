@@ -1,0 +1,11 @@
+﻿body {
+}
+
+.column{
+    display: inline-block;
+    position: relative;
+    width: 33.19%;
+    outline: solid;
+    text-align: center;
+    outline-color: black
+}
