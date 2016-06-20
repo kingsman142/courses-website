@@ -20,12 +20,16 @@ body {
     width: 15%;
     font-size: 150%;
     background-color: transparent;
-    border: 0;
-    border-bottom: 2px solid;
+    border: 2px solid;
+    border-radius: 0px;
+    padding: .2% 0% .2% 1%;
+    outline: none;
+    /*border-bottom: 2px solid;*/
     color: rgba(0, 0, 0, .3);
 }
     .form:focus{
         color: black;
+        border: 2px solid rgb(209, 17, 17);
     }
 
 .formText{
@@ -33,15 +37,16 @@ body {
     width: 15%;
     font-family: ModerneSans;
     font-size: 100%;
+    visibility: hidden;
 }
 
 .skill{
-    margin-left: 5%;
+    margin-left: .5%;
 }
 
 #formsDiv{
     text-align: center;
-    margin-top: 10%;
+    margin-top: 20%;
 }
 
 #main{
@@ -61,9 +66,15 @@ body {
     font-family: MyriadPro;
 }
 
-#updateDatabse{
+#updateDatabase{
     display: inline-block;
+    margin-top: .9%;
     clear: both;
+    background-color: rgb(28, 184, 65);
+    border: 2px solid rgba(28, 184, 65, .1);
+    outline: none;
+    border-radius: 0px;
+    padding: .8% 12.99% .8% 12.99%; 
 }
 
 

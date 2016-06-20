@@ -11,15 +11,13 @@
         <div id="title"><center>Job Explore</center></div>
 
         <div id="formsDiv">
-            <div class="formText job" >Occupation</div>
-            <div class="formText skill" >Skill</div></br>
-            <input class="form job" value="programmer"/>
-            <input class="form skill" value="organized"/><br/>
+            <div class="formText job">Occupation</div>
+            <div class="formText skill">Skill</div></br>
+            <input class="form job" value="Occupation"/>
+            <input class="form skill" value="Skill"/><br/>
             <input type="submit" value="Update Database" id="updateDatabase" onclick="updateDatabase()" />
         </div>
-
-        <hr />
-        <button id="next" onclick="location.href = 'index.php'">Next</button>
+        <!--<button id="next" onclick="location.href = 'index.php'">Next</button>-->
     </div>
 </body>
 </html>
