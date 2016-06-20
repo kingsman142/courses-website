@@ -9,6 +9,8 @@
     </RootNamespace>
     <ProjectTypeGuids>{A0786B88-2ADB-4C21-ABE8-AA2D79766269}</ProjectTypeGuids>
     <AssemblyName>CoursesWebsite</AssemblyName>
+    <SpecificPageValue>home.php</SpecificPageValue>
+    <StartAction>SpecificPage</StartAction>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <IncludeDebugInformation>true</IncludeDebugInformation>
@@ -17,11 +19,17 @@
     <IncludeDebugInformation>false</IncludeDebugInformation>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="home.php" />
+    <Compile Include="server.php" />
     <Compile Include="index.php" />
-    <Compile Include="executeDatabase.php" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="fonts\Moderne-Sans.ttf" />
+    <Content Include="fonts\MyriadPro-Regular.otf" />
     <Content Include="script.js" />
     <Content Include="Site.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="fonts\" />
   </ItemGroup>
 </Project>
