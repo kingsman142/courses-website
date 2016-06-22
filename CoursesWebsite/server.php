@@ -49,5 +49,17 @@ function updateDatabase(){
     }
 }
 
+function topFiveJobs(){
+    global $tablename, $conn;
+    $sql = "SELECT job, SUM(count) AS total FROM $tablename
+            GROUP BY job
+            ORDER BY total DESC, job DESC
+            LIMIT 5";
+    $jobs = mysql_fetch_assoc($conn->query($sql));
+    foreach($jobs as $value){
+        echo "Job: " . $value;
+    }
+}
+
 $conn->close();
 ?>

@@ -8,16 +8,18 @@
 </head>
 <body src="Site.css">
     <div id="main">
-        <div id="title"><center>Job Explore</center></div>
+        <center>
+        <div class="title" id="jobTitle">Job</div>
+        <div class="title" id="exploreTitle">Explore</div>
+        </center>
 
         <div id="formsDiv">
             <div class="formText job">Occupation</div>
             <div class="formText skill">Skill</div></br>
-            <input class="form job" value="Occupation"/>
-            <input class="form skill" value="Skill"/><br/>
-            <input type="submit" value="Update Database" id="updateDatabase" onclick="updateDatabase()" />
+            <input class="form job" placeholder="Occupation"/>
+            <input class="form skill" placeholder="Skill"/><br/>
+            <button type="submit" value="Update Database" id="updateDatabase" onclick="updateDatabase(); getTopFiveJobs();">Update Database</button>
         </div>
-        <!--<button id="next" onclick="location.href = 'index.php'">Next</button>-->
     </div>
 </body>
 </html>

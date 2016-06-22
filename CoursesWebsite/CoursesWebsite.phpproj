@@ -24,8 +24,11 @@
     <Compile Include="index.php" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="fonts\Code-Bold.otf" />
+    <Content Include="fonts\Code-Light.otf" />
     <Content Include="fonts\Moderne-Sans.ttf" />
     <Content Include="fonts\MyriadPro-Regular.otf" />
+    <Content Include="fonts\Simplifica.ttf" />
     <Content Include="script.js" />
     <Content Include="Site.css" />
   </ItemGroup>
