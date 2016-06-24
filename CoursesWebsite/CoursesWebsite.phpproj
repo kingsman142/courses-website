@@ -29,10 +29,12 @@
     <Content Include="fonts\Moderne-Sans.ttf" />
     <Content Include="fonts\MyriadPro-Regular.otf" />
     <Content Include="fonts\Simplifica.ttf" />
+    <Content Include="images\noisyTexture.png" />
     <Content Include="script.js" />
     <Content Include="Site.css" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="fonts\" />
+    <Folder Include="images\" />
   </ItemGroup>
 </Project>

@@ -110,7 +110,7 @@ html{
 
 #main{
     /*background-color: rgb(2, 0, 16);*/
-    background-image: url("noisy-texture-100x100-o6-d48-c-020010-t0.png");
+    background-image: url("images/noisyTexture.png");
     width: 75%;
     height: 101%;
     margin-left: auto;

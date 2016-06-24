@@ -19,6 +19,9 @@ switch($functionCall){
     case 'updateDatabase':
         updateDatabase();
         break;
+    case 'topFiveJobs':
+        topFiveJobs();
+        break;
     default:
         break;
 }
@@ -29,7 +32,7 @@ function updateDatabase(){
     $job = filter_input(INPUT_GET, 'job');
 
     $sql = "SELECT 1 FROM $tablename
-            WHERE skill = '$skill' 
+            WHERE skill = '$skill'
             AND job = '$job'";
 
     echo "<br/>Count: " . $conn->query($sql)->num_rows;
@@ -55,10 +58,12 @@ function topFiveJobs(){
             GROUP BY job
             ORDER BY total DESC, job DESC
             LIMIT 5";
-    $jobs = mysql_fetch_assoc($conn->query($sql));
-    foreach($jobs as $value){
-        echo "Job: " . $value;
+    $jobs = $conn->query($sql);
+    $returnArr = "";
+    foreach($jobs as $row){
+        $returnArr .= $row['job'] . ":" . $row['total'] . ",";
     }
+    echo $returnArr;
 }
 
 $conn->close();

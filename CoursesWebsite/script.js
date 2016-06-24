@@ -16,8 +16,11 @@ function getTopFiveJobs() {
     $.ajax({
         url: 'server.php?function=topFiveJobs',
         type: 'GET',
+        contentType: 'application/json',
         success: function (output) {
-            console.log("Output: " + output);
+            var jobsArr = output.split(',');
+            console.log("Output: " + jobsArr[1]);
+            //console.log("job: " + output.total);
         }
     });
 }
