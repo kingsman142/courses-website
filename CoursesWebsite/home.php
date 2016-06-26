@@ -18,7 +18,7 @@
             <div class="formText skill">Skill</div></br>
             <input class="form job" placeholder="Occupation"/>
             <input class="form skill" placeholder="Skill"/><br/>
-            <button type="submit" value="Update Database" id="updateDatabase" onclick="updateDatabase(); getTopFiveJobs();">Update Database</button>
+            <button type="submit" value="Update Database" id="updateDatabase" onclick="updateDatabase()">Update Database</button>
         </div>
 
         <div id="tableWrapper">
