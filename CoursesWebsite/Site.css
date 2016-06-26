@@ -33,9 +33,22 @@
     src: url(fonts/Placeholders/Cloud-Light.otf);
 }
 
+a{
+    text-decoration: none;
+    color: white;
+}
+    a:visited{
+        text-decoration: none;
+    }
+
+    a:hover{
+        text-decoration: none;
+        color: rgb(125, 25, 25);
+    }
+
 body {
-    /*background-color:gainsboro;
-    background-color: #326ec2;*/
+    /*background-color:gainsboro;*/
+    /*background-color: #326ec2;*/
     /*background-color: #36a432;*/
     background-color: #e8c938;
     height: 100%;
@@ -86,7 +99,7 @@ td{
 .form{
     display: inline;
     width: 17%;
-    font-size: 200%;
+    font-size: 160%;
     background-color: rgb(170, 170, 170);
     border: 2px solid rgb(170, 170, 170);
     border-radius: 3px;
@@ -104,18 +117,18 @@ td{
         transition: 0.5s linear;
     }
 
-    ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    ::-webkit-input-placeholder {
         color: rgba(255, 255, 255, 0.5);
     }
-    :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    :-moz-placeholder {
        color: rgba(255, 255, 255, 0.5);
        opacity: 1;
     }
-    ::-moz-placeholder { /* Mozilla Firefox 19+ */
+    ::-moz-placeholder {
        color: rgba(255, 255, 255, 0.5);
        opacity: 1;
     }
-    :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    :-ms-input-placeholder {
        color: rgba(255, 255, 255, 0.5);
     }
 
