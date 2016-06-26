@@ -28,6 +28,17 @@
     <Content Include="fonts\Code-Light.otf" />
     <Content Include="fonts\Moderne-Sans.ttf" />
     <Content Include="fonts\MyriadPro-Regular.otf" />
+    <Content Include="fonts\Placeholders\Cloud-Bold.otf" />
+    <Content Include="fonts\Placeholders\Cloud-Light.otf" />
+    <Content Include="fonts\Placeholders\Fabrica.otf" />
+    <Content Include="fonts\Placeholders\GlacialIndifference-Bold.otf" />
+    <Content Include="fonts\Placeholders\GlacialIndifference-Italic.otf" />
+    <Content Include="fonts\Placeholders\GlacialIndifference-Regular.otf" />
+    <Content Include="fonts\Placeholders\pier-bold-italic.otf" />
+    <Content Include="fonts\Placeholders\pier-bold.otf" />
+    <Content Include="fonts\Placeholders\pier-italic.otf" />
+    <Content Include="fonts\Placeholders\pier-regular.otf" />
+    <Content Include="fonts\Placeholders\Sk-Modernist-Regular.otf" />
     <Content Include="fonts\Simplifica.ttf" />
     <Content Include="images\noisyTexture.png" />
     <Content Include="script.js" />
@@ -35,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="fonts\" />
+    <Folder Include="fonts\Placeholders\" />
     <Folder Include="images\" />
   </ItemGroup>
 </Project>

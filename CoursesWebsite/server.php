@@ -22,6 +22,9 @@ switch($functionCall){
     case 'topFiveJobs':
         topFiveJobs();
         break;
+    case 'topFiveSkills':
+        topFiveSkills();
+        break;
     default:
         break;
 }
@@ -59,11 +62,25 @@ function topFiveJobs(){
             ORDER BY total DESC, job DESC
             LIMIT 5";
     $jobs = $conn->query($sql);
-    $returnArr = "";
+    $returnString = "";
     foreach($jobs as $row){
-        $returnArr .= $row['job'] . ":" . $row['total'] . ",";
+        $returnString .= $row['job'] . ":" . $row['total'] . ",";
     }
-    echo $returnArr;
+    echo $returnString;
+}
+
+function topFiveSkills(){
+    global $tablename, $conn;
+    $sql = "SELECT skill, SUM(count) as total FROM $tablename
+            GROUP BY skill
+            ORDER BY total DESC, skill DESC
+            LIMIT 5";
+    $skills = $conn->query($sql);
+    $returnString = "";
+    foreach($skills as $row){
+        $returnString .= $row['skill'] . ":" . $row['total'] . ",";
+    }
+    echo $returnString;
 }
 
 $conn->close();

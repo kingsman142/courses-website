@@ -16,15 +16,55 @@ function getTopFiveJobs() {
     $.ajax({
         url: 'server.php?function=topFiveJobs',
         type: 'GET',
-        contentType: 'application/json',
         success: function (output) {
             var jobsArr = output.split(',');
-            console.log("Output: " + jobsArr[1]);
-            //console.log("job: " + output.total);
+            console.log("Output: " + jobsArr);
+            var jobRows = output.split(',');
+            var jobStatsTable = document.getElementById("jobStatsTable");
+
+            for (var i = 0; i < 5; i++) {
+                var rowData = jobRows[i].split(':');
+                var rowJob = rowData[0];
+                var rowCount = rowData[1];
+                var newTableRow = jobStatsTable.children[1].insertRow(i);
+
+                var jobEntry = newTableRow.insertCell(0);
+                jobEntry.innerHTML = rowJob;
+
+                var countEntry = newTableRow.insertCell(1);
+                countEntry.innerHTML = rowCount;
+            }
         }
     });
 }
 
 function getTopFiveSkills() {
+    $.ajax({
+        url: 'server.php?function=topFiveSkills',
+        type: 'GET',
+        success: function (output) {
+            var skillsArr = output.split(',');
+            console.log("Output: " + skillsArr);
+            var skillRows = output.split(',');
+            var skillStatsTable = document.getElementById("skillStatsTable");
 
+            for (var i = 0; i < 5; i++) {
+                var rowData = skillRows[i].split(':');
+                var rowSkill = rowData[0];
+                var rowCount = rowData[1];
+                var newTableRow = skillStatsTable.children[1].insertRow(i);
+
+                var skillEntry = newTableRow.insertCell(0);
+                skillEntry.innerHTML = rowSkill;
+
+                var countEntry = newTableRow.insertCell(1);
+                countEntry.innerHTML = rowCount;
+            }
+        }
+    })
 }
+
+$(document).ready(function () {
+    getTopFiveJobs();
+    getTopFiveSkills();
+});
