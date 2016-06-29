@@ -29,7 +29,7 @@
     <Content Include="fonts\Moderne-Sans.ttf" />
     <Content Include="fonts\MyriadPro-Regular.otf" />
     <Content Include="fonts\Placeholders\Cloud-Bold.otf" />
-    <Content Include="fonts\Placeholders\Cloud-Light.otf" />
+    <Content Include="fonts\Cloud-Light.otf" />
     <Content Include="fonts\Placeholders\Fabrica.otf" />
     <Content Include="fonts\Placeholders\GlacialIndifference-Bold.otf" />
     <Content Include="fonts\Placeholders\GlacialIndifference-Italic.otf" />
@@ -40,7 +40,10 @@
     <Content Include="fonts\Placeholders\pier-regular.otf" />
     <Content Include="fonts\Placeholders\Sk-Modernist-Regular.otf" />
     <Content Include="fonts\Simplifica.ttf" />
+    <Content Include="images\home.png" />
     <Content Include="images\noisyTexture.png" />
+    <Content Include="images\searchJob.png" />
+    <Content Include="images\searchSkill.png" />
     <Content Include="script.js" />
     <Content Include="Site.css" />
   </ItemGroup>
