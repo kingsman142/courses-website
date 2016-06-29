@@ -60,7 +60,7 @@ function topFiveJobs(){
     $sql = "SELECT job, SUM(count) AS total FROM $tablename
             GROUP BY job
             ORDER BY total DESC, job DESC
-            LIMIT 5";
+            LIMIT 10";
     $jobs = $conn->query($sql);
     $returnString = "";
     foreach($jobs as $row){
@@ -74,7 +74,7 @@ function topFiveSkills(){
     $sql = "SELECT skill, SUM(count) as total FROM $tablename
             GROUP BY skill
             ORDER BY total DESC, skill DESC
-            LIMIT 5";
+            LIMIT 10";
     $skills = $conn->query($sql);
     $returnString = "";
     foreach($skills as $row){

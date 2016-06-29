@@ -7,7 +7,6 @@
         <title>Job Explore</title>
     </head>
     <body src="Site.css">
-        <div id="main">
             <center><?php
                 $jobOrSkill = "";
                 if($_GET['job']){
@@ -17,7 +16,18 @@
                 }
 
                 echo '<div style="font-family: MyriadPro">' . $jobOrSkill . '</div>'; 
-            ?></center>
-        </div>
+                    ?></center>
+
+            <div id="menuWrapper">
+
+            </div>
+
+            <div id="formsWrapper">
+
+            </div>
+
+            <div id="tableWrapper">
+
+            </div>
     </body>
 </html>

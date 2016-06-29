@@ -22,7 +22,7 @@ function getTopFiveJobs() {
             var jobRows = output.split(',');
             var jobStatsTable = document.getElementById("jobStatsTable");
 
-            for (var i = 0; i < 5; i++) {
+            for (var i = 0; i < jobRows.length-1; i++) {
                 var rowData = jobRows[i].split(':');
                 var rowJob = rowData[0];
                 var rowCount = rowData[1];
@@ -48,7 +48,7 @@ function getTopFiveSkills() {
             var skillRows = output.split(',');
             var skillStatsTable = document.getElementById("skillStatsTable");
 
-            for (var i = 0; i < 5; i++) {
+            for (var i = 0; i < skillRows.length-1; i++) {
                 var rowData = skillRows[i].split(':');
                 var rowSkill = rowData[0];
                 var rowCount = rowData[1];

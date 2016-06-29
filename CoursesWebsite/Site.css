@@ -50,19 +50,18 @@ body {
     /*background-color:gainsboro;*/
     /*background-color: #326ec2;*/
     /*background-color: #36a432;*/
-    background-color: #e8c938;
+    background-color: #f6d4c6;
     height: 100%;
-    overflow-y: hidden;
+    /*overflow-y: hidden;*/
 }
 
 caption{
     color: rgb(125, 25, 25);
     background-color: inherit;
+    /*border-bottom: 2px solid rgb(125, 25, 25);*/
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
-    border-left: 1px solid white;
-    border-right: 1px solid white;
-    border-top: 1px solid white;
+    width: 100%;
 }
 
 html{
@@ -70,19 +69,16 @@ html{
 }
 
 table{
-    /*background-color: rgba(0, 38, 255, .1);*/
-    background-color: rgba(255, 255, 255, .05);
-    border-left: 1px solid white;
-    border-right: 1px solid white;
-    border-bottom: 1px solid white;
     width: 40%; 
     margin-top: 3%;
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
-    padding-right: 1%;
-    padding-left: 1%;
-    font-size: 160%;
-    font-family: Cloud-Light, sans-serif;
+    padding-right: 4%;
+    padding-left: 4%;
+    /*font-size: 120%;*/
+    font-size: 1vw;
+    font-family: MyriadPro, Cloud-Light, sans-serif;
+    margin-bottom: 20%;
 }
 
 td{
@@ -100,36 +96,35 @@ td{
     display: inline;
     width: 17%;
     font-size: 160%;
-    background-color: rgb(170, 170, 170);
-    border: 2px solid rgb(170, 170, 170);
-    border-radius: 3px;
+    background-color: white;
+    border: 2px solid white;
+    border-radius: 0px;
     padding: .2% 0% .2% .5%;
     outline: none;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(0, 0, 0, .3);
 
     transition: 0.5s linear;
 }
     .form:focus{
-        color: rgba(255, 255, 255, 1);
+        color: rgba(0, 0, 0, 1);
         border: 2px solid black;
-        border-radius: 5px;
 
         transition: 0.5s linear;
     }
 
     ::-webkit-input-placeholder {
-        color: rgba(255, 255, 255, 0.5);
+         color: rgba(0, 0, 0, .3);
     }
     :-moz-placeholder {
-       color: rgba(255, 255, 255, 0.5);
+        color: rgba(0, 0, 0, .3);
        opacity: 1;
     }
     ::-moz-placeholder {
-       color: rgba(255, 255, 255, 0.5);
+        color: rgba(0, 0, 0, .3);
        opacity: 1;
     }
     :-ms-input-placeholder {
-       color: rgba(255, 255, 255, 0.5);
+        color: rgba(0, 0, 0, .3);
     }
 
 .formText{
@@ -140,6 +135,55 @@ td{
     visibility: hidden;
 }
 
+.icon{
+    display: inline-block;
+    width: 12%;
+    margin-top: 2%;
+    /*margin-right: 10%;*/
+}
+
+.searchForm{
+    display: inline;
+    width: 79%;
+    font-size: 100%;
+    background-color: rgba(255, 255, 255, .5);
+    border: 2px solid rgba(255, 255, 255, .05);
+    border-radius: 0px;
+    padding: .8% 2% .8% 2%;
+    vertical-align: middle;
+    margin-top: -7.5%;
+    margin-left: 3%;
+    border-radius: 20px;
+    outline: none;
+    color: rgba(0, 0, 0, .3);
+
+    transition: 0.5s;
+}
+    .searchForm:hover{
+        color: black;
+
+        transition: 0.5s;
+    }
+
+    .searchForm:focus{
+        color: black;
+
+        transition: 0.5s;
+    }
+
+.searchText{
+    padding: 10px 10px 10px 10px;
+    transition: 0.5s;
+    width: 93%;
+}
+    .searchText:hover{
+        background-color: #1d3454;
+        cursor: pointer;
+        width: 93%;
+
+        transition: 0.5s;
+    }
+
 .skill{
     margin-left: .5%;
 }
@@ -147,13 +191,15 @@ td{
 .title{
     display: inline-block;
     text-align: center;
-    font-size: 1000%;
-    margin-top: 4%;
-    color: white;
+    font-size: 9vw;
+    margin-top: 6%;
+    width: 65%;
+    color: black;
     font-family: Code-Light;
 }
 
 #exploreTitle{
+    display: inline;
     margin-left: 1%;
     font-family: Code-Bold;
 }
@@ -166,50 +212,55 @@ td{
 #jobStatsTable{
     color: white;
     margin-left: 0%;
-    display: inline-table;
+    width: 100%;
+    /*display: inline-table;*/
 }
 
 #jobTitle{
+    display: inline;
     font-family: Code-Light;
 }
 
-#main{
-    /*background-color: rgb(2, 0, 16);*/
-    background-image: url("images/noisyTexture.png");
-    z-index: -1;
-    width: 75%;
-    height: 101%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: -.5%;
-    box-shadow: -60px 0px 200px -30px rgba(0, 0, 0, .5), 60px 0px 200px -30px rgba(0, 0, 0, .5);
+#menuWrapper{
+    height: 98.5%;
+    position: fixed;
+    background-color: #365176;
+    width: 15%;
+    top: .8%;
+    color: white;
+    font-family: MyriadPro;
+    font-size: 1.1vw;
+    /*border: 2px solid #1d3454;*/
 }
 
 #skillStatsTable{
     color: white;
-    margin-left: 10%;
-    display: inline-table;
+    width: 100%;
+    /*display: inline-table;*/
 }
 
 #tableWrapper{
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-top: 10%;
-    height: 30%;
-    background-color: rgba(255, 255, 255, .1);
-    border-radius: 3px;
+    top: .8%;
+    margin-left: 84.1%;
+    height: 98.5%;
+    position: fixed;
+    display: block;
+    width: 15%;
+    background-color: #b96649;
+    border-radius: 0px;
     text-align: center;
+    /*border: 2px solid rgb(125, 25, 25);*/
 }
 
 #updateDatabase{
     display: inline-block;
-    margin-top: .9%;
+    margin-top: .7%;
     background-color: rgb(42, 177, 74);
     border: 2px solid rgba(28, 184, 65, .1);
     outline: none;
-    border-radius: 4px;
+    border-radius: 0px;
     color: white;
-    width: 36.3%;
+    width: 36.1%;
     font-size: 150%;
     padding: .4% 0% .4% 0%;
     font-family: MyriadPro;
