@@ -33,6 +33,10 @@
     src: url(fonts/Placeholders/Cloud-Light.otf);
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 a{
     text-decoration: none;
     color: white;
@@ -90,6 +94,60 @@ td{
 
     td:nth-child(2){
         text-align: right;
+    }
+
+.cardTitle{
+    text-decoration: underline;
+    margin-bottom: 3%;
+    display: block;
+}
+
+.contentCard{
+    display: inline;
+    width: 31%;
+    height: 33%;
+    padding: 1%;
+    float: left;
+    font-family: MyriadPro;
+    font-size: 100%;
+}
+    .red{
+        background-color: #ED4337;
+    }
+
+    .green{
+        background-color: #C0D890;
+    }
+
+    .yellow{
+        background-color: #FFFF99;
+    }
+
+    .purple{
+        background-color: #B19CD9;
+    }
+
+.contentTag{
+    display: inline;
+    width: initial;
+    filter: brightness(150%);
+    padding: 2%;
+    margin-right: 3%;
+}
+    .darkRed{
+        background-color: #bb1d11;
+    }    
+
+    .darkGreen{
+        background-color: #94bd42;
+    }
+
+    .darkYellow{
+        background-color: #e6e600;
+    }
+
+    .darkPurple{
+        background-color: #6e46b9;
     }
 
 .form{
@@ -189,13 +247,16 @@ td{
 }
 
 .title{
-    display: inline-block;
+    display: block;
     text-align: center;
     font-size: 9vw;
     margin-top: 6%;
-    width: 65%;
     color: black;
     font-family: Code-Light;
+}
+
+#associatedJobs{
+    text-align: left;
 }
 
 #exploreTitle{
@@ -209,6 +270,12 @@ td{
     margin-top: 10%;
 }
 
+#indexTitle{
+    margin-top: -3%;
+    font-family: Code-Light, 'Modern No. 20';
+    font-size: 4vw;
+}
+
 #jobStatsTable{
     color: white;
     margin-left: 0%;
@@ -219,6 +286,10 @@ td{
 #jobTitle{
     display: inline;
     font-family: Code-Light;
+}
+
+#main{
+    width: 65%;
 }
 
 #menuWrapper{

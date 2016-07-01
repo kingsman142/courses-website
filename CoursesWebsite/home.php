@@ -3,7 +3,7 @@
     <head>
         <link rel="stylesheet" type="text/css" href="Site.css" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-        <script src="script.js"></script>
+        <script src="home.js"></script>
         <title>Job Explore</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>

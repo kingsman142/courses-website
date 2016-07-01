@@ -14,6 +14,12 @@ $job = null;
 if(isset($_GET['function'])){
     $functionCall = filter_input(INPUT_GET, 'function');
 }
+if(isset($_GET['skill'])){
+    $skill = filter_input(INPUT_GET, 'skill');
+}
+if(isset($_GET['job'])){
+    $job = filter_input(INPUT_GET, 'job');
+}
 
 switch($functionCall){
     case 'updateDatabase':
@@ -24,6 +30,9 @@ switch($functionCall){
         break;
     case 'topFiveSkills':
         topFiveSkills();
+        break;
+    case 'associatedJobs':
+        getAssociatedJobs($skill);
         break;
     default:
         break;
@@ -80,6 +89,20 @@ function topFiveSkills(){
     foreach($skills as $row){
         $returnString .= $row['skill'] . ":" . $row['total'] . ",";
     }
+
+    echo $returnString;
+}
+
+function getAssociatedJobs(){
+    global $tablename, $conn, $skill;
+    $sql = "SELECT job FROM $tablename
+            WHERE skill = '$skill'";
+    $associatedJobs = $conn->query($sql);
+    $returnString = "";
+    foreach($associatedJobs as $row){
+        $returnString .= $row['job'] . ",";
+    }
+
     echo $returnString;
 }
 

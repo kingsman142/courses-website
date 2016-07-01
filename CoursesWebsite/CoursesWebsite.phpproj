@@ -44,7 +44,8 @@
     <Content Include="images\noisyTexture.png" />
     <Content Include="images\searchJob.png" />
     <Content Include="images\searchSkill.png" />
-    <Content Include="script.js" />
+    <Content Include="home.js" />
+    <Content Include="skillPage.js" />
     <Content Include="Site.css" />
   </ItemGroup>
   <ItemGroup>
