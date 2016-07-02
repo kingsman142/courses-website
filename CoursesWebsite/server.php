@@ -34,6 +34,9 @@ switch($functionCall){
     case 'associatedJobs':
         getAssociatedJobs($skill);
         break;
+    case 'associatedSkills':
+        getAssociatedSkills($job);
+        break;
     default:
         break;
 }
@@ -101,6 +104,20 @@ function getAssociatedJobs(){
     $returnString = "";
     foreach($associatedJobs as $row){
         $returnString .= $row['job'] . ",";
+    }
+
+    echo $returnString;
+}
+
+function getAssociatedSkills(){
+    global $tablename, $conn, $job;
+
+    $sql = "SELECT skill FROM $tablename
+            WHERE job = '$job'";
+    $associatedSkills = $conn->query($sql);
+    $returnString = "";
+    foreach($associatedSkills as $row){
+        $returnString .= $row['skill'] . ",";
     }
 
     echo $returnString;

@@ -3,7 +3,7 @@
     <head>
         <link rel="stylesheet" type="text/css" href="Site.css" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-        <script src="skillPage.js"></script>
+        <script src="index.js"></script>
         <title>Job Explore</title>
     </head>
     <body src="Site.css">
@@ -25,8 +25,21 @@
                         ?>
                     </div>
 
-                    <div class="contentCard green" id="associatedJobs">
-                        <div class="cardTitle">Most popular tagged jobs</div>
+                    <div class="contentCard green" id="associatedTags">
+                        <div class="cardTitle">
+                        <?php
+                            $tagText = "";
+                            if($jobOrSkill == "Job"){
+                                $tagText = "skills";
+                            } else if($jobOrSkill == "Skill"){
+                                $tagText = "jobs";
+                            } else{
+                                $tagText = "tags";
+                            }
+
+                            echo "Most popular tagged " . $tagText;
+                        ?>
+                        </div>
                     </div>
                 </div>
             </center>

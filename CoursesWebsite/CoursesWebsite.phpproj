@@ -45,7 +45,7 @@
     <Content Include="images\searchJob.png" />
     <Content Include="images\searchSkill.png" />
     <Content Include="home.js" />
-    <Content Include="skillPage.js" />
+    <Content Include="index.js" />
     <Content Include="Site.css" />
   </ItemGroup>
   <ItemGroup>

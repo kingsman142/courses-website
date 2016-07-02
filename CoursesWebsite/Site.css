@@ -130,10 +130,19 @@ td{
 .contentTag{
     display: inline;
     width: initial;
+    color: black;
     filter: brightness(150%);
     padding: 2%;
     margin-right: 3%;
+
+    transition: 0.5s;
 }
+    .contentTag:hover{
+        color: white;
+
+        transition: 0.5s;
+    }
+
     .darkRed{
         background-color: #bb1d11;
     }    
@@ -255,7 +264,7 @@ td{
     font-family: Code-Light;
 }
 
-#associatedJobs{
+#associatedTags{
     text-align: left;
 }
 
