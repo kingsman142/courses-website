@@ -1,0 +1,232 @@
+﻿@font-face{
+    font-family: MyriadPro;
+    src: url(fonts/MyriadPro-Regular.otf);
+}
+
+@font-face{
+    font-family: ModerneSans;
+    src: url(fonts/Moderne-Sans.ttf);
+}
+
+@font-face{
+    font-family: Simplifica;
+    src: url(fonts/Simplifica.ttf);
+}
+
+@font-face{
+    font-family: Code-Light;
+    src: url(fonts/Code-Light.otf);
+}
+
+@font-face{
+    font-family: Code-Bold;
+    src: url(fonts/Code-Bold.otf);
+}
+
+@font-face{
+    font-family: Cloud-Light;
+    src: url(fonts/Cloud-Light.otf);
+}
+
+@font-face{
+    font-family: Placeholder;
+    src: url(fonts/Placeholders/Cloud-Light.otf);
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+    a:visited{
+        text-decoration: none;
+    }
+
+    a:hover{
+        text-decoration: none;
+        color: rgb(125, 25, 25);
+    }
+
+body {
+    /*background-color:gainsboro;*/
+    /*background-color: #326ec2;*/
+    /*background-color: #36a432;*/
+    background-color: #e8c938;
+    height: 100%;
+    overflow-y: hidden;
+}
+
+caption{
+    color: rgb(125, 25, 25);
+    background-color: inherit;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    border-top: 1px solid white;
+}
+
+html{
+    height: 100%;
+}
+
+table{
+    /*background-color: rgba(0, 38, 255, .1);*/
+    background-color: rgba(255, 255, 255, .05);
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+    width: 40%; 
+    margin-top: 3%;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    padding-right: 1%;
+    padding-left: 1%;
+    font-size: 160%;
+    font-family: Cloud-Light, sans-serif;
+}
+
+td{
+    padding-bottom: -100px;
+}
+    td:nth-child(1){
+        text-align: left;
+    }
+
+    td:nth-child(2){
+        text-align: right;
+    }
+
+.form{
+    display: inline;
+    width: 17%;
+    font-size: 160%;
+    background-color: rgb(170, 170, 170);
+    border: 2px solid rgb(170, 170, 170);
+    border-radius: 3px;
+    padding: .2% 0% .2% .5%;
+    outline: none;
+    color: rgba(255, 255, 255, 0.5);
+
+    transition: 0.5s linear;
+}
+    .form:focus{
+        color: rgba(255, 255, 255, 1);
+        border: 2px solid black;
+        border-radius: 5px;
+
+        transition: 0.5s linear;
+    }
+
+    ::-webkit-input-placeholder {
+        color: rgba(255, 255, 255, 0.5);
+    }
+    :-moz-placeholder {
+       color: rgba(255, 255, 255, 0.5);
+       opacity: 1;
+    }
+    ::-moz-placeholder {
+       color: rgba(255, 255, 255, 0.5);
+       opacity: 1;
+    }
+    :-ms-input-placeholder {
+       color: rgba(255, 255, 255, 0.5);
+    }
+
+.formText{
+    display: inline-block;
+    width: 15%;
+    font-family: MyriadPro;
+    font-size: 100%;
+    visibility: hidden;
+}
+
+.skill{
+    margin-left: .5%;
+}
+
+.title{
+    display: inline-block;
+    text-align: center;
+    font-size: 1000%;
+    margin-top: 4%;
+    color: white;
+    font-family: Code-Light;
+}
+
+#exploreTitle{
+    margin-left: 1%;
+    font-family: Code-Bold;
+}
+
+#formsWrapper{
+    text-align: center;
+    margin-top: 10%;
+}
+
+#jobStatsTable{
+    color: white;
+    margin-left: 0%;
+    display: inline-table;
+}
+
+#jobTitle{
+    font-family: Code-Light;
+}
+
+#main{
+    /*background-color: rgb(2, 0, 16);*/
+    background-image: url("images/noisyTexture.png");
+    z-index: -1;
+    width: 75%;
+    height: 101%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -.5%;
+    box-shadow: -60px 0px 200px -30px rgba(0, 0, 0, .5), 60px 0px 200px -30px rgba(0, 0, 0, .5);
+}
+
+#skillStatsTable{
+    color: white;
+    margin-left: 10%;
+    display: inline-table;
+}
+
+#tableWrapper{
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 10%;
+    height: 30%;
+    background-color: rgba(255, 255, 255, .1);
+    border-radius: 3px;
+    text-align: center;
+}
+
+#updateDatabase{
+    display: inline-block;
+    margin-top: .9%;
+    background-color: rgb(42, 177, 74);
+    border: 2px solid rgba(28, 184, 65, .1);
+    outline: none;
+    border-radius: 4px;
+    color: white;
+    width: 36.3%;
+    font-size: 150%;
+    padding: .4% 0% .4% 0%;
+    font-family: MyriadPro;
+    position: relative;
+
+    transition: 0.5s linear;
+}
+
+    #updateDatabase:hover{
+        background-color: rgb(0, 195, 46);
+        cursor: pointer;
+        padding-right: .5%;
+
+        transition: 0.5s linear;        
+    }
+
+    #updateDatabase:hover::after{
+        /*content: " ➤";*/
+        content: "  →";
+    }
