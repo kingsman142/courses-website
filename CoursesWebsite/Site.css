@@ -209,13 +209,25 @@ td{
     /*margin-right: 10%;*/
 }
 
+.menuItem{
+    padding: 10px 10px 10px 10px;
+    transition: 0.5s;
+    width: 93%;
+}
+    .menuItem:hover{
+        background-color: #1d3454;
+        cursor: pointer;
+        width: 93%;
+
+        transition: 0.5s;
+    }
+
 .searchForm{
     display: inline;
     width: 79%;
     font-size: 100%;
     background-color: rgba(255, 255, 255, .5);
     border: 2px solid rgba(255, 255, 255, .05);
-    border-radius: 0px;
     padding: .8% 2% .8% 2%;
     vertical-align: middle;
     margin-top: -7.5%;
@@ -227,26 +239,13 @@ td{
     transition: 0.5s;
 }
     .searchForm:hover{
-        color: black;
+        color: white;
 
         transition: 0.5s;
     }
 
     .searchForm:focus{
         color: black;
-
-        transition: 0.5s;
-    }
-
-.searchText{
-    padding: 10px 10px 10px 10px;
-    transition: 0.5s;
-    width: 93%;
-}
-    .searchText:hover{
-        background-color: #1d3454;
-        cursor: pointer;
-        width: 93%;
 
         transition: 0.5s;
     }
@@ -278,6 +277,20 @@ td{
     text-align: center;
     margin-top: 10%;
 }
+
+#homeLink{
+    font-size: 100%;
+    padding: .8% 2% .8% 2%;
+    margin-left: 3%;
+    color: white;
+
+    transition: 0.5s;
+}
+    #homeLink:hover{
+        color: rgba(255, 255, 255, .5);
+
+        transition: 0.5s;
+    }
 
 #indexTitle{
     margin-top: -3%;

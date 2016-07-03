@@ -3,7 +3,8 @@
     <head>
         <link rel="stylesheet" type="text/css" href="Site.css" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-        <script src="index.js"></script>
+        <script src="scripts/index.js"></script>
+        <script src="scripts/common.js"></script>
         <title>Job Explore</title>
     </head>
     <body src="Site.css">
@@ -45,7 +46,9 @@
             </center>
 
             <div id="menuWrapper">
-
+                <div class="menuItem"><img class="icon" src="images/searchJob.png" /><input type="text" class="searchForm" placeholder="Search by job" /></div>
+                <div class="menuItem"><img class="icon" src="images/searchSkill.png" /><input type="text" class="searchForm" placeholder="Search by skill" /></div>
+                <div class="menuItem"><img class="icon" src="images/home.png" /><a type="submit" id="homeLink" href="home.php">Home</a></div>
             </div>
 
             <div id="tableWrapper">

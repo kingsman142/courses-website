@@ -5,7 +5,6 @@
         url: 'server.php?function=associatedJobs&skill=' + skill,
         type: 'GET',
         success: function (output) {
-            console.log("Output: " + output);
             var associatedJobs = output.split(',');
             var contentCard = $("#associatedTags");
 

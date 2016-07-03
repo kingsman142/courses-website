@@ -44,13 +44,15 @@
     <Content Include="images\noisyTexture.png" />
     <Content Include="images\searchJob.png" />
     <Content Include="images\searchSkill.png" />
-    <Content Include="home.js" />
-    <Content Include="index.js" />
+    <Content Include="scripts\home.js" />
+    <Content Include="scripts\index.js" />
+    <Content Include="scripts\common.js" />
     <Content Include="Site.css" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="fonts\" />
     <Folder Include="fonts\Placeholders\" />
     <Folder Include="images\" />
+    <Folder Include="scripts\" />
   </ItemGroup>
 </Project>

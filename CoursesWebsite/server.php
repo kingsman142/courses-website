@@ -37,6 +37,12 @@ switch($functionCall){
     case 'associatedSkills':
         getAssociatedSkills($job);
         break;
+    case 'searchForSkill':
+        searchForSkill();
+        break;
+    case 'searchForJob':
+        searchForJob();
+        break;
     default:
         break;
 }
@@ -121,6 +127,27 @@ function getAssociatedSkills(){
     }
 
     echo $returnString;
+}
+
+function searchForJob(){
+    global $tablename, $conn, $job;
+
+    $sql = "SELECT COUNT(*) AS numResults FROM $tablename
+            WHERE job = '$job'";
+    $results = $conn->query($sql);
+    $numResults = $results['numResults'];
+    echo "Job results: " . $numResults;
+
+}
+
+function searchForSkill(){
+    global $tablename, $conn, $skill;
+
+    $sql = "SELECT COUNT(*) AS numResults FROM $tablename
+            WHERE skill = '$skill'";
+    $results = $conn->query($sql);
+    $numResults = $results['numResults'];
+    echo "Skill results: " . $numResults;
 }
 
 $conn->close();
