@@ -135,8 +135,9 @@ function searchForJob(){
     $sql = "SELECT COUNT(*) AS numResults FROM $tablename
             WHERE job = '$job'";
     $results = $conn->query($sql);
-    $numResults = $results['numResults'];
-    echo "Job results: " . $numResults;
+    $returnRow = mysqli_fetch_row($results);
+    $numResults = $returnRow[0];
+    echo $numResults;
 
 }
 
@@ -146,8 +147,9 @@ function searchForSkill(){
     $sql = "SELECT COUNT(*) AS numResults FROM $tablename
             WHERE skill = '$skill'";
     $results = $conn->query($sql);
-    $numResults = $results['numResults'];
-    echo "Skill results: " . $numResults;
+    $returnRow = mysqli_fetch_row($results);
+    $numResults = $returnRow[0];
+    echo $numResults;
 }
 
 $conn->close();

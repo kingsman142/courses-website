@@ -12,7 +12,9 @@
         url: "server.php?function=searchForSkill&skill=" + searchTerm,
         type: 'GET',
         success: function (output) {
-            console.log("output: " + output);
+            if (output > 0) {
+                window.location.href = "index.php?skill=" + searchTerm;
+            }
         }
     })
 }
@@ -31,12 +33,17 @@ function searchForJob() {
         url: "server.php?function=searchForJob&job=" + searchTerm,
         type: 'GET',
         success: function (output) {
-            console.log("output: " + output);
+            if (output > 0) {
+                window.location.href = "index.php?job=" + searchTerm;
+            }
         }
     })
 }
 
-$.each($(".searchForm"), function () {
-    console.log("wow");
-    console.log("placeholder: " + this.placeholder);
-})
+function enterKey(event) {
+    if (event.which == 13) {
+        return true;
+    } else {
+        return false;
+    }
+}

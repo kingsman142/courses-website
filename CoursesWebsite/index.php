@@ -46,8 +46,8 @@
             </center>
 
             <div id="menuWrapper">
-                <div class="menuItem"><img class="icon" src="images/searchJob.png" /><input type="text" class="searchForm" placeholder="Search by job" /></div>
-                <div class="menuItem"><img class="icon" src="images/searchSkill.png" /><input type="text" class="searchForm" placeholder="Search by skill" /></div>
+                <div class="menuItem"><img class="icon" src="images/searchJob.png" /><input type="text" class="searchForm" onkeydown="if(enterKey(event)){ searchForJob() }" placeholder="Search by job" /></div>
+                <div class="menuItem"><img class="icon" src="images/searchSkill.png" /><input type="text" class="searchForm" onkeydown="if(enterKey(event)){ searchForSkill() }" placeholder="Search by skill" /></div>
                 <div class="menuItem"><img class="icon" src="images/home.png" /><a type="submit" id="homeLink" href="home.php">Home</a></div>
             </div>
 
