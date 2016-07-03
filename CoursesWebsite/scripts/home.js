@@ -6,7 +6,6 @@
         url: 'server.php?function=updateDatabase&skill=' + skill + '&job=' + job,
         type: 'GET',
         success: function (output) {
-            console.log("Output: " + output);
             document.getElementById("updateDatabase").disabled = false;
         }
     });
@@ -18,7 +17,6 @@ function getTopFiveJobs() {
         type: 'GET',
         success: function (output) {
             var jobsArr = output.split(',');
-            console.log("Output: " + jobsArr);
             var jobRows = output.split(',');
             var jobStatsTable = document.getElementById("jobStatsTable");
 
@@ -44,7 +42,6 @@ function getTopFiveSkills() {
         type: 'GET',
         success: function (output) {
             var skillsArr = output.split(',');
-            console.log("Output: " + skillsArr);
             var skillRows = output.split(',');
             var skillStatsTable = document.getElementById("skillStatsTable");
 
