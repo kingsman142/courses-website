@@ -7,19 +7,9 @@ $tablename = "skills";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-$functionCall = null;;
-$skill = null;
-$job = null;
-
-if(isset($_GET['function'])){
-    $functionCall = filter_input(INPUT_GET, 'function');
-}
-if(isset($_GET['skill'])){
-    $skill = filter_input(INPUT_GET, 'skill');
-}
-if(isset($_GET['job'])){
-    $job = filter_input(INPUT_GET, 'job');
-}
+$functionCall = isset($_GET['function']) ? filter_input(INPUT_GET, 'function') : null;
+$skill = isset($_GET['skill']) ? filter_input(INPUT_GET, 'skill') : null;
+$job = isset($_GET['job']) ? filter_input(INPUT_GET, 'job') : null;
 
 switch($functionCall){
     case 'updateDatabase':
