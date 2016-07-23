@@ -42,6 +42,12 @@
                         ?>
                         </div>
                     </div>
+
+                    <div class="contentCard purple" id="fillerCard">
+                    </div>
+
+                    <a class="twitter-timeline" href="https://twitter.com/CAREEREALISM" data-width="31%" data-height="858px" data-chrome="noscrollbar noheader nofooter noborders" data-theme="light">Tweets by LaddersInc</a>
+                    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
                 </div>
             </center>
 

@@ -107,6 +107,7 @@ td{
     width: 31%;
     height: 33%;
     padding: 1%;
+    padding-bottom: 0.5%;
     float: left;
     font-family: MyriadPro;
     font-size: 100%;
@@ -128,12 +129,13 @@ td{
     }
 
 .contentTag{
-    display: inline;
+    display: inline-block;
     width: initial;
     color: black;
     filter: brightness(150%);
     padding: 2%;
-    margin-right: 3%;
+    margin-right: 2%;
+    margin-bottom: 2%;
 
     transition: 0.5s;
 }
@@ -271,6 +273,10 @@ td{
     display: inline;
     margin-left: 1%;
     font-family: Code-Bold;
+}
+
+#fillerCard{
+    margin-left: 1%;
 }
 
 #formsWrapper{
