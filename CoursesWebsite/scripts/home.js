@@ -1,12 +1,12 @@
 ﻿function updateDatabase() {
     var job = $('.form.job')[0].value;
     var skill = $('.form.skill')[0].value;
-    $("#updateDatabase").disabled = true;
+    document.getElementById("updateDatabase").disabled = true;
     $.ajax({
         url: 'server.php?function=updateDatabase&skill=' + skill + '&job=' + job,
         type: 'GET',
         success: function (output) {
-            $("#updateDatabase").disabled = false;
+            document.getElementById("updateDatabase").disabled = false;
         }
     });
 }
@@ -18,7 +18,7 @@ function getTopFiveJobs() {
         success: function (output) {
             var jobsArr = output.split(',');
             var jobRows = output.split(',');
-            var jobStatsTable = $("#jobStatsTable");
+            var jobStatsTable = document.getElementById("jobStatsTable");
 
             if (jobRows.length >= 2) {
                 for (var i = 0; i < jobRows.length - 1; i++) {
@@ -47,7 +47,7 @@ function getTopFiveSkills() {
         success: function (output) {
             var skillsArr = output.split(',');
             var skillRows = output.split(',');
-            var skillStatsTable = $("#skillStatsTable");
+            var skillStatsTable = document.getElementById("skillStatsTable");
 
             if (skillRows.length >= 2) {
                 for (var i = 0; i < skillRows.length - 1; i++) {
