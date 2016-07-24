@@ -370,7 +370,7 @@ td{
     transition: 0.5s linear;
 }
 
-    #updateDatabase:hover{
+    #updateDatabase:enabled:hover{
         background-color: rgb(0, 195, 46);
         cursor: pointer;
         padding-right: .5%;
@@ -378,7 +378,11 @@ td{
         transition: 0.5s linear;        
     }
 
-    #updateDatabase:hover::after{
-        /*content: " ➤";*/
+    #updateDatabase:enabled:hover::after{
+        /*content: " ➤";*/        
         content: "  →";
+    }
+
+    #updateDatabase:disabled{
+        background-color: rgba(42, 177, 74, .5);
     }

@@ -6,7 +6,11 @@
         url: 'server.php?function=updateDatabase&skill=' + skill + '&job=' + job,
         type: 'GET',
         success: function (output) {
-            document.getElementById("updateDatabase").disabled = false;
+            setTimeout(
+                function () {
+                    document.getElementById("updateDatabase").disabled = false;
+                },
+            2000);
         }
     });
 }
