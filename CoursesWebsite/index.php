@@ -43,7 +43,8 @@
                     </div>
                 </div>
 
-                <div class="contentCard purple" id="fillerCard">
+                <div class="contentCard purple" id="insertNewEntry">
+                    <div class="cardTitle">Insert a new entry</div>
                 </div>
 
                 <a class="twitter-timeline" href="https://twitter.com/CAREEREALISM" data-width="31%" data-height="858px" data-chrome="noscrollbar noheader nofooter noborders" data-theme="light">Tweets by LaddersInc</a>
