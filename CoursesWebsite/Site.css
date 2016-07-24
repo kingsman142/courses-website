@@ -72,6 +72,10 @@ html{
     height: 100%;
 }
 
+input[type=range]{
+    width: 30%;
+}
+
 table{
     width: 40%; 
     margin-top: 3%;
@@ -100,6 +104,7 @@ td{
     text-decoration: underline;
     margin-bottom: 3%;
     display: block;
+    text-align: left;
 }
 
 .contentCard{
@@ -111,6 +116,7 @@ td{
     float: left;
     font-family: MyriadPro;
     font-size: 100%;
+    text-align: left;
 }
     .red{
         background-color: #ED4337;
@@ -265,18 +271,10 @@ td{
     font-family: Code-Light;
 }
 
-#associatedTags{
-    text-align: left;
-}
-
 #exploreTitle{
     display: inline;
     margin-left: 1%;
     font-family: Code-Bold;
-}
-
-#fillerCard{
-    margin-left: 1%;
 }
 
 #formsWrapper{
@@ -302,6 +300,10 @@ td{
     margin-top: -3%;
     font-family: Code-Light, 'Modern No. 20';
     font-size: 4vw;
+}
+
+#insertNewEntry{
+    margin-left: 1%;
 }
 
 #jobStatsTable{
