@@ -21,10 +21,13 @@
         </div>
 
         <div id="formsWrapper">
-            <div class="formText job">Occupation</div>
-            <div class="formText skill">Skill</div><br/>
             <input class="form job" placeholder="Occupation"/>
             <input class="form skill" placeholder="Skill"/><br/>
+            <form data-role="rangeslider" oninput="result.value=salary.value">
+                <label for="salary">Salary:</label>
+                <input type="range" name="salary" id="salary" value="-1" min="0" max="1000" step="10"/>
+                <output name="result">0</output>
+            </form>
             <button type="submit" id="updateDatabase" onclick="updateDatabase()">Help others find a career path!</button>
         </div>
 
