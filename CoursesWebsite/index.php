@@ -22,7 +22,7 @@
                         $data = $_GET['skill'];
                     }
 
-                    echo '<div id="indexTitle">' . $jobOrSkill . ': <b>' . $data . '</b></div>';
+                    echo '<div id="indexTitle"><span>' . $jobOrSkill . '</span>: <b>' . $data . '</b></div>';
                     ?>
                 </div>
 
@@ -45,6 +45,12 @@
 
                 <div class="contentCard purple" id="insertNewEntry">
                     <div class="cardTitle">Insert a new entry</div>
+                    <div id="formsWrapper">
+                        <input class="form job" placeholder="Occupation" />
+                        <input class="form skill" placeholder="Skill" />
+                        <input class="form salary" placeholder="Salary (yearly)" />
+                        <button type="submit" id="updateDatabase" onclick="updateDatabase()">Help others find a career path!</button>
+                    </div>
                 </div>
 
                 <a class="twitter-timeline" href="https://twitter.com/CAREEREALISM" data-width="31%" data-height="858px" data-chrome="noscrollbar noheader nofooter noborders" data-theme="light">Tweets by LaddersInc</a>
