@@ -26,35 +26,43 @@
                     ?>
                 </div>
 
-                <div class="contentCard green" id="associatedTags">
-                    <div class="cardTitle">
-                    <?php
-                        $tagText = "";
-                        if($jobOrSkill == "Job"){
-                            $tagText = "skills";
-                        } else if($jobOrSkill == "Skill"){
-                            $tagText = "jobs";
-                        } else{
-                            $tagText = "tags";
-                        }
+                <div class="column" id="leftColumn">
+                    <div class="contentCard green" id="associatedTags">
+                        <div class="cardTitle">
+                        <?php
+                            $tagText = "";
+                            if($jobOrSkill == "Job"){
+                                $tagText = "skills";
+                            } else if($jobOrSkill == "Skill"){
+                                $tagText = "jobs";
+                            } else{
+                                $tagText = "tags";
+                            }
 
-                        echo "Most popular tagged " . $tagText;
-                    ?>
+                            echo "Most popular tagged " . $tagText;
+                        ?>
+                        </div>
+                    </div>
+
+                    <div class="contentCard red" id="averageSalary"></div>
+                </div>
+
+                <div class="column" id="middleColumn">
+                    <div class="contentCard purple" id="insertNewEntry">
+                        <div class="cardTitle">Insert a new entry</div>
+                        <div id="formsWrapper">
+                            <input class="form job" placeholder="Occupation" />
+                            <input class="form skill" placeholder="Skill" />
+                            <input type="number" max="999999" class="form salary" placeholder="Salary (yearly)" />
+                            <button type="submit" id="updateDatabase" onclick="updateDatabase()">Help others find a career path!</button>
+                        </div>
                     </div>
                 </div>
 
-                <div class="contentCard purple" id="insertNewEntry">
-                    <div class="cardTitle">Insert a new entry</div>
-                    <div id="formsWrapper">
-                        <input class="form job" placeholder="Occupation" />
-                        <input class="form skill" placeholder="Skill" />
-                        <input type="number" max="999999" class="form salary" placeholder="Salary (yearly)" />
-                        <button type="submit" id="updateDatabase" onclick="updateDatabase()">Help others find a career path!</button>
-                    </div>
+                <div class="column" id="rightColumn">
+                    <a class="twitter-timeline" href="https://twitter.com/CAREEREALISM" data-height="858px" data-chrome="noscrollbar noheader nofooter noborders" data-theme="light">Tweets by LaddersInc</a>
+                    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
                 </div>
-
-                <a class="twitter-timeline" href="https://twitter.com/CAREEREALISM" data-width="31%" data-height="858px" data-chrome="noscrollbar noheader nofooter noborders" data-theme="light">Tweets by LaddersInc</a>
-                <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
             </div>
         </center>
 
