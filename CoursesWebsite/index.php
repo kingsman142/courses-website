@@ -44,7 +44,9 @@
                         </div>
                     </div>
 
-                    <div class="contentCard red" id="averageSalary"></div>
+                    <div class="contentCard red" id="averageSalary">
+                        <div class="cardTitle">Average salary</div>
+                    </div>
                 </div>
 
                 <div class="column" id="middleColumn">
@@ -53,7 +55,7 @@
                         <div id="formsWrapper">
                             <input class="form job" placeholder="Occupation" />
                             <input class="form skill" placeholder="Skill" />
-                            <input type="number" max="999999" class="form salary" placeholder="Salary (yearly)" />
+                            <input type="number" max="999999" min="0" class="form salary" placeholder="Salary (yearly)" />
                             <button type="submit" id="updateDatabase" onclick="updateDatabase()">Help others find a career path!</button>
                         </div>
                     </div>
