@@ -49,7 +49,7 @@
     <Content Include="scripts\home.js" />
     <Content Include="scripts\index.js" />
     <Content Include="scripts\common.js" />
-    <Content Include="css\site.css" />
+    <Content Include="css\common.css" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="fonts\" />
