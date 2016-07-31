@@ -16,14 +16,12 @@
         </div>
 
         <div class="main">
-            <center>
-                <div class="title">
-                    <div id="jobTitle">
-                        Job
-                        <div id="exploreTitle">Explore</div>
-                    </div>
+            <div class="title">
+                <div id="jobTitle">
+                    Job
+                    <div id="exploreTitle">Explore</div>
                 </div>
-            </center>
+            </div>
 
             <div id="formsWrapper">
                 <input class="form job" placeholder="Occupation" />

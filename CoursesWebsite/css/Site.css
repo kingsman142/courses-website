@@ -56,15 +56,6 @@ body {
     /*background-color: #36a432;*/
     background-color: #f6d4c6;
     height: 1080px;
-    /*overflow-y: hidden;*/
-}
-
-html{
-    height: 1080px;
-}
-
-input[type=range]{
-    width: 1920px;
 }
 
 td:nth-child(1){
