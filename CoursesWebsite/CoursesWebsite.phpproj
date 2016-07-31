@@ -24,6 +24,8 @@
     <Compile Include="index.php" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\home.css" />
+    <Content Include="css\index.css" />
     <Content Include="fonts\Code-Bold.otf" />
     <Content Include="fonts\Code-Light.otf" />
     <Content Include="fonts\Moderne-Sans.ttf" />
@@ -47,12 +49,13 @@
     <Content Include="scripts\home.js" />
     <Content Include="scripts\index.js" />
     <Content Include="scripts\common.js" />
-    <Content Include="Site.css" />
+    <Content Include="css\site.css" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="fonts\" />
     <Folder Include="fonts\Placeholders\" />
     <Folder Include="images\" />
+    <Folder Include="css\" />
     <Folder Include="scripts\" />
   </ItemGroup>
 </Project>

@@ -1,36 +1,36 @@
 ﻿@font-face{
     font-family: MyriadPro;
-    src: url(fonts/MyriadPro-Regular.otf);
+    src: url(../fonts/MyriadPro-Regular.otf);
 }
 
 @font-face{
     font-family: ModerneSans;
-    src: url(fonts/Moderne-Sans.ttf);
+    src: url(../fonts/Moderne-Sans.ttf);
 }
 
 @font-face{
     font-family: Simplifica;
-    src: url(fonts/Simplifica.ttf);
+    src: url(../fonts/Simplifica.ttf);
 }
 
 @font-face{
     font-family: Code-Light;
-    src: url(fonts/Code-Light.otf);
+    src: url(../fonts/Code-Light.otf);
 }
 
 @font-face{
     font-family: Code-Bold;
-    src: url(fonts/Code-Bold.otf);
+    src: url(../fonts/Code-Bold.otf);
 }
 
 @font-face{
     font-family: Cloud-Light;
-    src: url(fonts/Cloud-Light.otf);
+    src: url(../fonts/Cloud-Light.otf);
 }
 
 @font-face{
     font-family: Placeholder;
-    src: url(fonts/Placeholders/Cloud-Light.otf);
+    src: url(../fonts/Placeholders/Cloud-Light.otf);
 }
 
 ::-webkit-scrollbar {
@@ -59,13 +59,6 @@ body {
     /*overflow-y: hidden;*/
 }
 
-caption{
-    color: rgb(125, 25, 25);
-    /*border-bottom: 2px solid rgb(125, 25, 25);*/
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
-}
-
 html{
     height: 1080px;
 }
@@ -74,121 +67,11 @@ input[type=range]{
     width: 1920px;
 }
 
-table{
-    width: 200px; 
-    margin-top: 10px;
-    border-bottom-left-radius: 3px;
-    border-bottom-right-radius: 3px;
-    padding-right: 13px;
-    padding-left: 13px;
-    font-size: 19px;
-    font-family: MyriadPro, Cloud-Light, sans-serif;
-    margin-bottom: 65px;
-}
-
 td:nth-child(1){
     text-align: left;
 }
     td:nth-child(2){
         text-align: right;
-    }
-
-.cardTitle{
-    text-decoration: underline;
-    margin-bottom: 8px;
-    display: block;
-}
-
-.column{
-    width: 400px;
-}
-    #leftColumn{
-        float: left;
-        margin-right: 23.5px;
-    }
-
-    #middleColumn{
-        float: left;
-        margin-right: 23.5px;
-    }
-
-    #rightColumn{
-        float: left;
-    }
-
-.contentCard{
-    display: inline;
-    padding: 10px;
-    padding: 10px 10px 3px 10px;
-    margin-bottom: 10px;
-    float: left;
-    font-family: MyriadPro;
-    font-size: 16px;
-    text-align: left;
-    width: 380px;
-}
-    .red{
-        background-color: #ED4337;
-    }
-
-    .green{
-        background-color: #C0D890;
-    }
-
-    .yellow{
-        background-color: #FFFF99;
-    }
-
-    .purple{
-        background-color: #B19CD9;
-    }
-
-.contentCard > #formsWrapper > input{
-    width: 369px;
-    margin-left: 0px;
-    margin-bottom: 8px;
-    font-size: 22px;
-}
-    .contentCard > #formsWrapper > button{
-        width: 379px;
-        margin-bottom: 8px;
-    }
-
-    .contentCard > #formsWrapper{
-        margin-top: -7px;
-    }
-
-.contentTag{
-    display: inline-block;
-    width: initial;
-    color: black;
-    filter: brightness(150%);
-    padding: 8px;
-    margin-right: 8px;
-    margin-bottom: 8px;
-
-    transition: 0.5s;
-}
-    .contentTag:hover{
-        color: white;
-
-        transition: 0.5s;
-    }
-
-    .darkRed{
-        background-color: #bb1d11;
-    }    
-
-    .darkGreen{
-        background-color: #94bd42;
-    }
-
-    .darkYellow{
-        background-color: #e6e600;
-    }
-
-    .darkPurple{
-        background-color: #6e46b9;
     }
 
 .form{
@@ -305,37 +188,10 @@ td:nth-child(1){
     font-family: Code-Light;
 }
 
-#averageSalary{
-    display: block;
-}
-
 #exploreTitle{
     display: inline;
     margin-left: -60px;
     font-family: Code-Bold;
-}
-
-#formsWrapper{
-    margin-top: 125px;
-}
-
-#homeLink{
-    font-size: 21.2px;
-    padding: 10px 10px 10px 10px;
-    color: white;
-
-    transition: 0.5s;
-}
-    #homeLink:hover{
-        color: rgba(255, 255, 255, .5);
-
-        transition: 0.5s;
-    }
-
-#indexTitle{
-    margin-top: -37px;
-    font-family: Code-Light, 'Modern No. 20';
-    font-size: 76.7px;
 }
 
 #jobStatsTable{

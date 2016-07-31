@@ -1,0 +1,120 @@
+﻿.cardTitle{
+    text-decoration: underline;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.column{
+    width: 400px;
+}
+    #leftColumn{
+        float: left;
+        margin-right: 23.5px;
+    }
+
+    #middleColumn{
+        float: left;
+        margin-right: 23.5px;
+    }
+
+    #rightColumn{
+        float: left;
+    }
+
+.contentCard{
+    display: inline;
+    padding: 10px;
+    padding: 10px 10px 3px 10px;
+    margin-bottom: 10px;
+    float: left;
+    font-family: MyriadPro;
+    font-size: 16px;
+    text-align: left;
+    width: 380px;
+}
+    .red{
+        background-color: #ED4337;
+    }
+
+    .green{
+        background-color: #C0D890;
+    }
+
+    .yellow{
+        background-color: #FFFF99;
+    }
+
+    .purple{
+        background-color: #B19CD9;
+    }
+
+.contentTag{
+    display: inline-block;
+    width: initial;
+    color: black;
+    filter: brightness(150%);
+    padding: 8px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+
+    transition: 0.5s;
+}
+    .contentTag:hover{
+        color: white;
+
+        transition: 0.5s;
+    }
+
+    .darkRed{
+        background-color: #bb1d11;
+    }    
+
+    .darkGreen{
+        background-color: #94bd42;
+    }
+
+    .darkYellow{
+        background-color: #e6e600;
+    }
+
+    .darkPurple{
+        background-color: #6e46b9;
+    }
+
+#formsWrapper > input{
+    width: 369px;
+    margin-left: 0px;
+    margin-bottom: 8px;
+    font-size: 22px;
+}
+    #formsWrapper > button{
+        width: 379px;
+        margin-bottom: 8px;
+    }
+
+    #formsWrapper{
+        margin-top: -7px;
+    }
+
+#homeLink{
+    font-size: 21.2px;
+    padding: 10px 10px 10px 10px;
+    color: white;
+
+    transition: 0.5s;
+}
+    #homeLink:hover{
+        color: rgba(255, 255, 255, .5);
+
+        transition: 0.5s;
+    }
+
+#indexTitle{
+    margin-top: -37px;
+    font-family: Code-Light, 'Modern No. 20';
+    font-size: 76.7px;
+}
+
+#averageSalary{
+    display: block;
+}
