@@ -33,6 +33,25 @@
     src: url(../fonts/Placeholders/Cloud-Light.otf);
 }
 
+caption{
+    color: rgb(125, 25, 25);
+    /*border-bottom: 2px solid rgb(125, 25, 25);*/
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+table{
+    width: 200px; 
+    margin-top: 10px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    padding-right: 13px;
+    padding-left: 13px;
+    font-size: 18px;
+    font-family: MyriadPro, Cloud-Light, sans-serif;
+    margin-bottom: 65px;
+}
+
 ::-webkit-scrollbar {
     display: none;
 }
@@ -55,7 +74,7 @@ body {
     /*background-color: #326ec2;*/
     /*background-color: #36a432;*/
     background-color: #f6d4c6;
-    height: 1080px;
+    height: 960px;
 }
 
 td:nth-child(1){
@@ -65,7 +84,7 @@ td:nth-child(1){
         text-align: right;
     }
 
-.form{
+.new-entry-input{
     display: inline;
     width: 284px;
     font-size: 25px;
@@ -79,7 +98,7 @@ td:nth-child(1){
 
     transition: 0.5s linear;
 }
-    .form:focus{
+    .new-entry-input:focus{
         color: rgba(0, 0, 0, 1);
         border: 2px solid black;
 
@@ -101,12 +120,12 @@ td:nth-child(1){
         color: rgba(0, 0, 0, .3);
     }
 
-.icon{
+.menu-icon{
     display: inline-block;
     width: 33px;
 }
 
-.job{
+.job-input{
     margin-left: 3px;
 }
 
@@ -121,24 +140,24 @@ td:nth-child(1){
     text-align: center;
 }
 
-.menuItem{
+.menu-item{
     padding: 15px 10px 10px 10px;
     transition: 0.5s;
     width: 268px;
 }
-    .menuItem:hover{
+    .menu-item:hover{
         background-color: #1d3454;
         cursor: pointer;
 
         transition: 0.5s;
     }
 
-.salary{
+.salary-input{
     width: 200px;
     text-align: left;
 }
 
-.searchForm{
+.search-input{
     display: inline-block;
     width: 212px;
     font-size: 21.2px;
@@ -154,19 +173,19 @@ td:nth-child(1){
 
     transition: 0.5s;
 }
-    .searchForm:hover{
+    .search-input:hover{
         color: white;
 
         transition: 0.5s;
     }
 
-    .searchForm:focus{
+    .search-input:focus{
         color: black;
 
         transition: 0.5s;
     }
 
-.skill{
+.skill-input{
     margin-left: 6px;
 }
 
@@ -179,23 +198,12 @@ td:nth-child(1){
     font-family: Code-Light;
 }
 
-#exploreTitle{
-    display: inline;
-    margin-left: -60px;
-    font-family: Code-Bold;
-}
-
-#jobStatsTable{
+#job-stats-table{
     color: white;
     width: 290px;
 }
 
-#jobTitle{
-    display: inline;
-    font-family: Code-Light;
-}
-
-#menuWrapper{
+#menu-wrapper{
     height: 965px;
     position: fixed;
     background-color: #365176;
@@ -208,12 +216,12 @@ td:nth-child(1){
     /*border: 2px solid #1d3454;*/
 }
 
-#skillStatsTable{
+#skill-stats-table{
     color: white;
     width: 290px;
 }
 
-#tableWrapper{
+#table-wrapper{
     height: 965px;
     position: fixed;
     background-color: #b96649;
@@ -225,7 +233,7 @@ td:nth-child(1){
     /*border: 2px solid rgb(125, 25, 25);*/
 }
 
-#updateDatabase{
+#update-database{
     display: inline-block;
     margin-top: 6px;
     background-color: rgb(42, 177, 74);
@@ -241,7 +249,7 @@ td:nth-child(1){
     transition: 0.5s linear;
 }
 
-    #updateDatabase:enabled:hover{
+    #update-database:enabled:hover{
         background-color: rgb(0, 195, 46);
         cursor: pointer;
         /*padding-right: .5%;*/
@@ -249,11 +257,11 @@ td:nth-child(1){
         transition: 0.5s linear;        
     }
 
-    #updateDatabase:enabled:hover::after{
+    #update-database:enabled:hover::after{
         /*content: " ➤";*/        
         /*content: "  →";*/
     }
 
-    #updateDatabase:disabled{
+    #update-database:disabled{
         background-color: rgba(42, 177, 74, .5);
     }

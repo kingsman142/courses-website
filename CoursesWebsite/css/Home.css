@@ -1,22 +1,14 @@
-﻿caption{
-    color: rgb(125, 25, 25);
-    /*border-bottom: 2px solid rgb(125, 25, 25);*/
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
-}
-
-table{
-    width: 200px; 
-    margin-top: 10px;
-    border-bottom-left-radius: 3px;
-    border-bottom-right-radius: 3px;
-    padding-right: 13px;
-    padding-left: 13px;
-    font-size: 19px;
-    font-family: MyriadPro, Cloud-Light, sans-serif;
-    margin-bottom: 65px;
-}
-
-#formsWrapper{
+﻿#forms-wrapper{
     margin-top: 125px;
+}
+
+#job-title{
+    display: inline;
+    font-family: Code-Light;
+}
+
+#explore-title{
+    display: inline;
+    margin-left: -60px;
+    font-family: Code-Bold;
 }

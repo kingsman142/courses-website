@@ -1,18 +1,18 @@
 ﻿function getAssociatedJobs() {
-    var skill = $("#indexTitle b")[0].innerHTML;
+    var skill = $("#index-title b")[0].innerHTML;
 
     $.ajax({
         url: 'server.php?function=associatedJobs&skill=' + skill,
         type: 'GET',
         success: function (output) {
             var associatedJobs = output.split(',');
-            var contentCard = $("#associatedTags");
+            var contentCard = $("#associated-tags");
 
             for (var i = 0; i < associatedJobs.length - 1; i++) {
                 if (associatedJobs[i] != "") {
                     var newTag = document.createElement("a");
                     newTag.href = "index.php?job=" + associatedJobs[i];
-                    newTag.className = "contentTag darkGreen";
+                    newTag.className = "content-tag dark-green";
                     newTag.innerHTML = associatedJobs[i];
                     contentCard.append(newTag);
                 }
@@ -22,20 +22,20 @@
 }
 
 function getAssociatedSkills() {
-    var job = $("#indexTitle b")[0].innerHTML;
+    var job = $("#index-title b")[0].innerHTML;
 
     $.ajax({
         url: "server.php?function=associatedSkills&job=" + job,
         type: 'GET',
         success: function (output) {
             var associatedSkills = output.split(',');
-            var contentCard = $("#associatedTags");
+            var contentCard = $("#associated-tags");
 
             for (var i = 0; i < associatedSkills.length - 1; i++) {
                 if (associatedSkills[i] != "") {
                     var newTag = document.createElement("a");
                     newTag.href = "index.php?skill=" + associatedSkills[i];
-                    newTag.className = "contentTag darkGreen";
+                    newTag.className = "content-tag dark-green";
                     newTag.innerHTML = associatedSkills[i];
                     contentCard.append(newTag);
                 }
@@ -58,12 +58,12 @@ function getAssociatedTags() {
 }
 
 function setUpNewEntryForms() {
-    var jobOrSkill = $("#indexTitle span")[0].innerHTML;
+    var jobOrSkill = $("#index-title span")[0].innerHTML;
 
-    var inputForm = $(".form." + jobOrSkill.toLowerCase());
+    var inputForm = $(".new-entry-input." + jobOrSkill.toLowerCase() +  "-input");
 
     if (inputForm.length > 0) {
-        var jobOrSkillValue = $("#indexTitle b")[0].innerHTML;
+        var jobOrSkillValue = $("#index-title b")[0].innerHTML;
         inputForm = inputForm[0];
         inputForm.value = jobOrSkillValue;
     }

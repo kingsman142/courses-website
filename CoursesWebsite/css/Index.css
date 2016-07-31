@@ -1,4 +1,4 @@
-﻿.cardTitle{
+﻿.card-title{
     text-decoration: underline;
     margin-bottom: 8px;
     display: block;
@@ -7,21 +7,21 @@
 .column{
     width: 400px;
 }
-    #leftColumn{
+    #left-column{
         float: left;
         margin-right: 23.5px;
     }
 
-    #middleColumn{
+    #middle-column{
         float: left;
         margin-right: 23.5px;
     }
 
-    #rightColumn{
+    #right-column{
         float: left;
     }
 
-.contentCard{
+.content-card{
     display: inline;
     padding: 10px;
     padding: 10px 10px 3px 10px;
@@ -48,7 +48,7 @@
         background-color: #B19CD9;
     }
 
-.contentTag{
+.content-tag{
     display: inline-block;
     width: initial;
     color: black;
@@ -59,62 +59,62 @@
 
     transition: 0.5s;
 }
-    .contentTag:hover{
+    .content-tag:hover{
         color: white;
 
         transition: 0.5s;
     }
 
-    .darkRed{
+    .dark-red{
         background-color: #bb1d11;
     }    
 
-    .darkGreen{
+    .dark-green{
         background-color: #94bd42;
     }
 
-    .darkYellow{
+    .dark-yellow{
         background-color: #e6e600;
     }
 
-    .darkPurple{
+    .dark-purple{
         background-color: #6e46b9;
     }
 
-#formsWrapper > input{
+#forms-wrapper > input{
     width: 369px;
     margin-left: 0px;
     margin-bottom: 8px;
     font-size: 22px;
 }
-    #formsWrapper > button{
+    #forms-wrapper > button{
         width: 379px;
         margin-bottom: 8px;
     }
 
-    #formsWrapper{
+    #forms-wrapper{
         margin-top: -7px;
     }
 
-#homeLink{
+#home-link{
     font-size: 21.2px;
     padding: 10px 10px 10px 10px;
     color: white;
 
     transition: 0.5s;
 }
-    #homeLink:hover{
+    #home-link:hover{
         color: rgba(255, 255, 255, .5);
 
         transition: 0.5s;
     }
 
-#indexTitle{
+#index-title{
     margin-top: -37px;
     font-family: Code-Light, 'Modern No. 20';
     font-size: 76.7px;
 }
 
-#averageSalary{
+#average-salary{
     display: block;
 }

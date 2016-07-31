@@ -1,14 +1,14 @@
 ﻿function updateDatabase() {
-    var job = $('.form.job')[0].value;
-    var skill = $('.form.skill')[0].value;
-    $("#updateDatabase")[0].disabled = true;
+    var job = $('.new-entry-input.job-input')[0].value;
+    var skill = $('.new-entry-input.skill-input')[0].value;
+    $("#update-database")[0].disabled = true;
     $.ajax({
         url: 'server.php?function=updateDatabase&skill=' + skill + '&job=' + job,
         type: 'GET',
         success: function (output) {
             setTimeout(
                 function () {
-                    $("#updateDatabase")[0].disabled = false;
+                    $("#update-database")[0].disabled = false;
                 },
             2000);
         }
@@ -16,7 +16,7 @@
 }
 
 function searchForSkill() {
-    var searchForms = $(".searchForm");
+    var searchForms = $(".search-input");
     var searchTerm = "";
 
     for (var i = 0; i < searchForms.length; i++) {
@@ -37,7 +37,7 @@ function searchForSkill() {
 }
 
 function searchForJob() {
-    var searchForms = $(".searchForm");
+    var searchForms = $(".search-input");
     var searchTerm = "";
 
     for (var i = 0; i < searchForms.length; i++) {
