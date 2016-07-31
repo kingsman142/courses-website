@@ -134,6 +134,21 @@ td{
         background-color: #B19CD9;
     }
 
+.contentCard > #formsWrapper > input{
+    width: 100%;
+    margin-left: -1%;
+    margin-bottom: 2%;
+    font-size: 150%;
+}
+    .contentCard > #formsWrapper > button{
+        width: 101.5%;
+        margin-left: -1%;
+    }
+
+    .contentCard > #formsWrapper{
+        margin-top: 0%;
+    }
+
 .contentTag{
     display: inline-block;
     width: initial;
@@ -169,13 +184,14 @@ td{
 
 .form{
     display: inline;
-    width: 17%;
+    width: 22%;
     font-size: 160%;
     background-color: white;
     border: 2px solid white;
     border-radius: 0px;
     padding: .2% 0% .2% .5%;
     outline: none;
+    margin-top: .4%;
     color: rgba(0, 0, 0, .3);
 
     transition: 0.5s linear;
@@ -217,6 +233,10 @@ td{
     /*margin-right: 10%;*/
 }
 
+.job{
+    margin-left: .2%;
+}
+
 .menuItem{
     padding: 10px 10px 10px 10px;
     transition: 0.5s;
@@ -229,6 +249,11 @@ td{
 
         transition: 0.5s;
     }
+
+.salary{
+    width: 15%;
+    text-align: left;
+}
 
 .searchForm{
     display: inline;
@@ -278,8 +303,17 @@ td{
 }
 
 #formsWrapper{
-    text-align: center;
     margin-top: 10%;
+}
+
+#homeContent{
+    width: 67%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 
 #homeLink{
@@ -320,6 +354,7 @@ td{
 
 #main{
     width: 65%;
+    padding-left: .6%;
 }
 
 #menuWrapper{
@@ -355,13 +390,13 @@ td{
 
 #updateDatabase{
     display: inline-block;
-    margin-top: .7%;
+    margin-top: .5%;
     background-color: rgb(42, 177, 74);
     border: 2px solid rgba(28, 184, 65, .1);
     outline: none;
     border-radius: 0px;
     color: white;
-    width: 36.1%;
+    width: 46.5%;
     font-size: 150%;
     padding: .4% 0% .4% 0%;
     font-family: MyriadPro;
