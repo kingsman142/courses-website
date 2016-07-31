@@ -9,7 +9,7 @@
     </head>
     <body src="Site.css">
         <center>
-            <div id="main">
+            <div class="main">
                 <div class="title">
                     <?php
                     $jobOrSkill = "";
@@ -62,7 +62,7 @@
                 </div>
 
                 <div class="column" id="rightColumn">
-                    <a class="twitter-timeline" href="https://twitter.com/CAREEREALISM" data-height="858px" data-chrome="noscrollbar noheader nofooter noborders" data-theme="light">Tweets by LaddersInc</a>
+                    <a class="twitter-timeline" href="https://twitter.com/CAREEREALISM" data-height="849px" data-chrome="noscrollbar noheader nofooter noborders" data-theme="light">Tweets by LaddersInc</a>
                     <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
                 </div>
             </div>
