@@ -1,9 +1,11 @@
 ﻿function updateDatabase() {
     var job = $('.new-entry-input.job-input')[0].value;
     var skill = $('.new-entry-input.skill-input')[0].value;
+    var salary = $('.new-entry-input.salary-input')[0].value;
+
     $("#update-database")[0].disabled = true;
     $.ajax({
-        url: 'server.php?function=updateDatabase&skill=' + skill + '&job=' + job,
+        url: 'server.php?function=updateDatabase&skill=' + skill + '&job=' + job + '&salary=' + salary,
         type: 'GET',
         success: function (output) {
             setTimeout(
