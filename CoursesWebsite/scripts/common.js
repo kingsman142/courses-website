@@ -1,14 +1,14 @@
 ﻿function updateDatabase() {
     var job = $('.form.job')[0].value;
     var skill = $('.form.skill')[0].value;
-    document.getElementById("updateDatabase").disabled = true;
+    $("#updateDatabase")[0].disabled = true;
     $.ajax({
         url: 'server.php?function=updateDatabase&skill=' + skill + '&job=' + job,
         type: 'GET',
         success: function (output) {
             setTimeout(
                 function () {
-                    document.getElementById("updateDatabase").disabled = false;
+                    $("#updateDatabase")[0].disabled = false;
                 },
             2000);
         }

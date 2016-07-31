@@ -5,7 +5,7 @@
         success: function (output) {
             var jobsArr = output.split(',');
             var jobRows = output.split(',');
-            var jobStatsTable = document.getElementById("jobStatsTable");
+            var jobStatsTable = $("#jobStatsTable")[0];
 
             if (jobRows.length >= 2) {
                 for (var i = 0; i < jobRows.length - 1; i++) {
@@ -34,7 +34,7 @@ function getTopFiveSkills() {
         success: function (output) {
             var skillsArr = output.split(',');
             var skillRows = output.split(',');
-            var skillStatsTable = document.getElementById("skillStatsTable");
+            var skillStatsTable = $("#skillStatsTable")[0];
 
             if (skillRows.length >= 2) {
                 for (var i = 0; i < skillRows.length - 1; i++) {
