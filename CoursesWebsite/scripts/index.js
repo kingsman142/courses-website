@@ -53,6 +53,19 @@ function getAssociatedTags() {
     }
 }
 
+function setUpNewEntryForms() {
+    var jobOrSkill = $("#indexTitle span")[0].innerHTML;
+
+    var inputForm = $(".form." + jobOrSkill.toLowerCase());
+
+    if (inputForm.length > 0) {
+        var jobOrSkillValue = $("#indexTitle b")[0].innerHTML;
+        inputForm = inputForm[0];
+        inputForm.value = jobOrSkillValue;
+    }
+}
+
 $(document).ready(function () {
     getAssociatedTags();
+    setUpNewEntryForms();
 });
