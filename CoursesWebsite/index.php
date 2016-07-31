@@ -48,7 +48,7 @@
                     <div id="formsWrapper">
                         <input class="form job" placeholder="Occupation" />
                         <input class="form skill" placeholder="Skill" />
-                        <input class="form salary" placeholder="Salary (yearly)" />
+                        <input type="number" max="999999" class="form salary" placeholder="Salary (yearly)" />
                         <button type="submit" id="updateDatabase" onclick="updateDatabase()">Help others find a career path!</button>
                     </div>
                 </div>
