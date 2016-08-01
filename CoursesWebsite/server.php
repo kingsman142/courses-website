@@ -126,7 +126,7 @@ function GetAssociatedJobs(){
     $associatedJobs = $conn->query($sql);
     $returnString = "";
     foreach($associatedJobs as $row){
-        $returnString .= $row['job'] . " (" . round($row['count']/$total_entries, 2) . "%),";
+        $returnString .= $row['job'] . " (" . round($row['count']/$total_entries, 2)*100 . "%),";
     }
 
     echo $returnString;
@@ -146,7 +146,7 @@ function GetAssociatedSkills(){
     $associatedSkills = $conn->query($sql);
     $returnString = "";
     foreach($associatedSkills as $row){
-        $returnString .= $row['skill'] . " (" . round($row['count']/$total_entries, 2) . "%),";
+        $returnString .= $row['skill'] . " (" . round($row['count']/$total_entries, 2)*100 . "%),";
     }
 
     echo $returnString;
