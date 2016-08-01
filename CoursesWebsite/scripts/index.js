@@ -11,7 +11,9 @@
             for (var i = 0; i < associatedJobs.length - 1; i++) {
                 if (associatedJobs[i] != "") {
                     var newTag = document.createElement("a");
-                    newTag.href = "index.php?job=" + associatedJobs[i];
+
+                    var lastSpaceIndex = associatedJobs[i].lastIndexOf(" ");
+                    newTag.href = "index.php?job=" + associatedJobs[i].substring(0, lastSpaceIndex);
                     newTag.className = "content-tag dark-green";
                     newTag.innerHTML = associatedJobs[i];
                     contentCard.append(newTag);
@@ -34,7 +36,9 @@ function getAssociatedSkills() {
             for (var i = 0; i < associatedSkills.length - 1; i++) {
                 if (associatedSkills[i] != "") {
                     var newTag = document.createElement("a");
-                    newTag.href = "index.php?skill=" + associatedSkills[i];
+
+                    var lastSpaceIndex = associatedSkills[i].lastIndexOf(" ");
+                    newTag.href = "index.php?skill=" + associatedSkills[i].substring(0, lastSpaceIndex);
                     newTag.className = "content-tag dark-green";
                     newTag.innerHTML = associatedSkills[i];
                     contentCard.append(newTag);
