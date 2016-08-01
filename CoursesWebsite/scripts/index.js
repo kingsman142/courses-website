@@ -66,11 +66,12 @@ function getAverageSalary() {
         type: "GET",
         success: function (output) {
             var salaryContentCard = $("#average-salary");
+            output = parseInt(output);
 
             if (salaryContentCard) {
                 var salaryDiv = document.createElement("div");
                 salaryDiv.id = "salary-value";
-                if (output > 0) salaryDiv.innerHTML = "$" + output;
+                if (output > 0) salaryDiv.innerHTML = "$" + output.toLocaleString();
                 else salaryDiv.innerHTML = output;
                 salaryContentCard.append(salaryDiv);
             }

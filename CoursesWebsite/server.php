@@ -57,24 +57,28 @@ function UpdateDatabase(){
         $sql = "UPDATE $tablename
                 SET count = count+1
                 WHERE skill = '$skill'
-                AND job = '$job'";
+                AND job = '$job';";
+        $conn->query($sql);
 
         if(!empty($salary)){
-            $sql .= "UPDATE $tablename
-                     SET average_salary=(count*average_salary + $salary)/count
-                     WHERE skill='$skill'
-                     AND job= '$job'
+            $sql = "UPDATE $tablename
+                    SET average_salary=(salary_entries*average_salary + $salary)/(salary_entries+1)
+                    WHERE skill = '$skill'
+                    AND job = '$job';";
+            $conn->query($sql);
 
-                     UPDATE $tablename
-                     SET salary_entries = salary_entries+1
-                     WHERE skill='$skill'
-                     AND job= '$job'";
+            $sql = "UPDATE $tablename
+                    SET salary_entries = salary_entries+1
+                    WHERE skill = '$skill'
+                    AND job = '$job'";
+            $conn->query($sql);
         }
-        $conn->query($sql);
     } else{
         echo "<br/>Adding new entry.";
+        if(empty($salary)) $salary = 0;
+
         $sql = "INSERT INTO $tablename (skill, job, count, average_salary, salary_entries)
-                VALUES ('$skill', '$job', 1, 0, 0)";
+                VALUES ('$skill', '$job', 1, $salary, 0)";
         $conn->query($sql);
     }
 }
@@ -155,7 +159,7 @@ function GetAverageSalary(){
 
         if($avg_salary > 0) echo "$avg_salary";
         else echo "No salary data available";
-    } else{ 
+    } else{
         echo 5;
         echo "No salary data available";
     }
