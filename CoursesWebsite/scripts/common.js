@@ -5,7 +5,7 @@
 
     $("#update-database")[0].disabled = true;
     $.ajax({
-        url: 'server.php?function=updateDatabase&skill=' + skill + '&job=' + job + '&salary=' + salary,
+        url: 'server.php?function=UpdateDatabase&skill=' + skill + '&job=' + job + '&salary=' + salary,
         type: 'GET',
         success: function (output) {
             setTimeout(
@@ -28,7 +28,7 @@ function searchForSkill() {
     }
 
     $.ajax({
-        url: "server.php?function=searchForSkill&skill=" + searchTerm,
+        url: "server.php?function=SearchForSkill&skill=" + searchTerm,
         type: 'GET',
         success: function (output) {
             if (output > 0) {
@@ -49,7 +49,7 @@ function searchForJob() {
     }
 
     $.ajax({
-        url: "server.php?function=searchForJob&job=" + searchTerm,
+        url: "server.php?function=SearchForJob&job=" + searchTerm,
         type: 'GET',
         success: function (output) {
             if (output > 0) {

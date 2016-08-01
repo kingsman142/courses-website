@@ -10,60 +10,76 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 $functionCall = isset($_GET['function']) ? filter_input(INPUT_GET, 'function') : null;
 $skill = isset($_GET['skill']) ? filter_input(INPUT_GET, 'skill') : null;
 $job = isset($_GET['job']) ? filter_input(INPUT_GET, 'job') : null;
+$salary = isset($_GET['salary']) ? filter_input(INPUT_GET, 'salary') : null;
 
 switch($functionCall){
-    case 'updateDatabase':
+    case 'UpdateDatabase':
         updateDatabase();
         break;
-    case 'topFiveJobs':
-        topFiveJobs();
+    case 'GetTopFiveJobs':
+        GetTopFiveJobs();
         break;
-    case 'topFiveSkills':
-        topFiveSkills();
+    case 'GetTopFiveSkills':
+        GetTopFiveSkills();
         break;
-    case 'associatedJobs':
-        getAssociatedJobs($skill);
+    case 'GetAssociatedJobs':
+        GetAssociatedJobs($skill);
         break;
-    case 'associatedSkills':
-        getAssociatedSkills($job);
+    case 'GetAssociatedSkills':
+        GetAssociatedSkills($job);
         break;
-    case 'searchForSkill':
-        searchForSkill();
+    case 'SearchForSkill':
+        SearchForSkill();
         break;
-    case 'searchForJob':
-        searchForJob();
+    case 'SearchForJob':
+        SearchForJob();
+        break;
+    case 'GetAverageSalary':
+        GetAverageSalary();
         break;
     default:
         break;
 }
 
-function updateDatabase(){
-    global $tablename, $conn, $skill, $job;
-    $skill = filter_input(INPUT_GET, 'skill');
-    $job = filter_input(INPUT_GET, 'job');
+function UpdateDatabase(){
+    global $tablename, $conn, $skill, $job, $salary;
 
     $sql = "SELECT 1 FROM $tablename
             WHERE skill = '$skill'
             AND job = '$job'";
 
-    echo "<br/>Count: " . $conn->query($sql)->num_rows;
+    $numRows = $conn->query($sql)->num_rows;
 
-    if($conn->query($sql)->num_rows > 0){
-        echo "<br/>Updating skill.";
+    echo "<br/>Count: " . $numRows;
+
+    if($numRows == 1){
+        echo "<br/>Updating entry.";
         $sql = "UPDATE $tablename
                 SET count = count+1
                 WHERE skill = '$skill'
                 AND job = '$job'";
+
+        if(!empty($salary)){
+            $sql .= "UPDATE $tablename
+                     SET average_salary=(count*average_salary + $salary)/count
+                     WHERE skill='$skill'
+                     AND job= '$job'
+
+                     UPDATE $tablename
+                     SET salary_entries = salary_entries+1
+                     WHERE skill='$skill'
+                     AND job= '$job'";
+        }
         $conn->query($sql);
-    } else if($conn->query($sql)->num_rows == 0){
-        echo "<br/>Adding skill.";
-        $sql = "INSERT INTO $tablename (skill, job, count)
-                VALUES ('$skill', '$job', 1)";
+    } else{
+        echo "<br/>Adding new entry.";
+        $sql = "INSERT INTO $tablename (skill, job, count, average_salary, salary_entries)
+                VALUES ('$skill', '$job', 1, 0, 0)";
         $conn->query($sql);
     }
 }
 
-function topFiveJobs(){
+function GetTopFiveJobs(){
     global $tablename, $conn;
     $sql = "SELECT job, SUM(count) AS total FROM $tablename
             GROUP BY job
@@ -77,7 +93,7 @@ function topFiveJobs(){
     echo $returnString;
 }
 
-function topFiveSkills(){
+function GetTopFiveSkills(){
     global $tablename, $conn;
     $sql = "SELECT skill, SUM(count) as total FROM $tablename
             GROUP BY skill
@@ -92,7 +108,7 @@ function topFiveSkills(){
     echo $returnString;
 }
 
-function getAssociatedJobs(){
+function GetAssociatedJobs(){
     global $tablename, $conn, $skill;
     $sql = "SELECT job FROM $tablename
             WHERE skill = '$skill'";
@@ -105,7 +121,7 @@ function getAssociatedJobs(){
     echo $returnString;
 }
 
-function getAssociatedSkills(){
+function GetAssociatedSkills(){
     global $tablename, $conn, $job;
 
     $sql = "SELECT skill FROM $tablename
@@ -119,7 +135,33 @@ function getAssociatedSkills(){
     echo $returnString;
 }
 
-function searchForJob(){
+function GetAverageSalary(){
+    global $tablename, $conn, $job, $skill;
+
+    $sql = null;
+
+    if(!empty($skill)){
+        $sql = "SELECT ROUND(SUM((average_salary)*salary_entries)/SUM(salary_entries), 2) AS average_salary
+                FROM skills
+                WHERE skill='$skill'";
+    } else if(!empty($job)){
+        $sql = "SELECT ROUND(SUM((average_salary)*salary_entries)/SUM(salary_entries), 2) AS average_salary
+                FROM skills
+                WHERE job='$job'";
+    }
+
+    if($sql != null){
+        $avg_salary = mysqli_fetch_row($conn->query($sql))[0];
+
+        if($avg_salary > 0) echo "$avg_salary";
+        else echo "No salary data available";
+    } else{ 
+        echo 5;
+        echo "No salary data available";
+    }
+}
+
+function SearchForJob(){
     global $tablename, $conn, $job;
 
     $sql = "SELECT COUNT(*) AS numResults FROM $tablename
@@ -131,7 +173,7 @@ function searchForJob(){
 
 }
 
-function searchForSkill(){
+function SearchForSkill(){
     global $tablename, $conn, $skill;
 
     $sql = "SELECT COUNT(*) AS numResults FROM $tablename

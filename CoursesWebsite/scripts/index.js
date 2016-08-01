@@ -2,7 +2,7 @@
     var skill = $("#index-title b")[0].innerHTML;
 
     $.ajax({
-        url: 'server.php?function=associatedJobs&skill=' + skill,
+        url: 'server.php?function=GetAssociatedJobs&skill=' + skill,
         type: 'GET',
         success: function (output) {
             var associatedJobs = output.split(',');
@@ -25,7 +25,7 @@ function getAssociatedSkills() {
     var job = $("#index-title b")[0].innerHTML;
 
     $.ajax({
-        url: "server.php?function=associatedSkills&job=" + job,
+        url: "server.php?function=GetAssociatedSkills&job=" + job,
         type: 'GET',
         success: function (output) {
             var associatedSkills = output.split(',');
@@ -57,6 +57,27 @@ function getAssociatedTags() {
     }
 }
 
+function getAverageSalary() {
+    var jobOrSkill = $("#index-title span")[0].innerHTML;
+    var jobOrSkillValue = $("#index-title b")[0].innerHTML;
+
+    $.ajax({
+        url: "server.php?function=GetAverageSalary&" + jobOrSkill.toLowerCase() + "=" + jobOrSkillValue,
+        type: "GET",
+        success: function (output) {
+            var salaryContentCard = $("#average-salary");
+
+            if (salaryContentCard) {
+                var salaryDiv = document.createElement("div");
+                salaryDiv.id = "salary-value";
+                if (output > 0) salaryDiv.innerHTML = "$" + output;
+                else salaryDiv.innerHTML = output;
+                salaryContentCard.append(salaryDiv);
+            }
+        }
+    });
+}
+
 function setUpNewEntryForms() {
     var jobOrSkill = $("#index-title span")[0].innerHTML;
 
@@ -71,5 +92,6 @@ function setUpNewEntryForms() {
 
 $(document).ready(function () {
     getAssociatedTags();
+    getAverageSalary();
     setUpNewEntryForms();
 });

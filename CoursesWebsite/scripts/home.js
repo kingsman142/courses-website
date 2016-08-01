@@ -1,6 +1,6 @@
 ﻿function getTopFiveJobs() {
     $.ajax({
-        url: 'server.php?function=topFiveJobs',
+        url: 'server.php?function=GetTopFiveJobs',
         type: 'GET',
         success: function (output) {
             var jobsArr = output.split(',');
@@ -29,7 +29,7 @@
 
 function getTopFiveSkills() {
     $.ajax({
-        url: 'server.php?function=topFiveSkills',
+        url: 'server.php?function=GetTopFiveSkills',
         type: 'GET',
         success: function (output) {
             var skillsArr = output.split(',');
