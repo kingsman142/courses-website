@@ -115,7 +115,8 @@ function GetTopFiveSkills(){
 function GetAssociatedJobs(){
     global $tablename, $conn, $skill;
     $sql = "SELECT job FROM $tablename
-            WHERE skill = '$skill'";
+            WHERE skill = '$skill'
+            ORDER BY count DESC";
     $associatedJobs = $conn->query($sql);
     $returnString = "";
     foreach($associatedJobs as $row){
@@ -129,7 +130,8 @@ function GetAssociatedSkills(){
     global $tablename, $conn, $job;
 
     $sql = "SELECT skill FROM $tablename
-            WHERE job = '$job'";
+            WHERE job = '$job'
+            ORDER BY count DESC";
     $associatedSkills = $conn->query($sql);
     $returnString = "";
     foreach($associatedSkills as $row){
