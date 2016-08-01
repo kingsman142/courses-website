@@ -115,6 +115,8 @@
     font-size: 76.7px;
 }
 
-#average-salary{
-    display: block;
+#salary-value{
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 28px;
 }
