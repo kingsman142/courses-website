@@ -114,13 +114,19 @@ function GetTopFiveSkills(){
 
 function GetAssociatedJobs(){
     global $tablename, $conn, $skill;
-    $sql = "SELECT job FROM $tablename
+
+    $sql = "SELECT SUM(count) AS total_entries
+            FROM skills
+            WHERE skill='$skill'";
+    $total_entries = mysqli_fetch_row($conn->query($sql))[0];
+
+    $sql = "SELECT job, count FROM $tablename
             WHERE skill = '$skill'
             ORDER BY count DESC";
     $associatedJobs = $conn->query($sql);
     $returnString = "";
     foreach($associatedJobs as $row){
-        $returnString .= $row['job'] . ",";
+        $returnString .= $row['job'] . " (" . round($row['count']/$total_entries, 2) . "%),";
     }
 
     echo $returnString;
@@ -129,13 +135,18 @@ function GetAssociatedJobs(){
 function GetAssociatedSkills(){
     global $tablename, $conn, $job;
 
-    $sql = "SELECT skill FROM $tablename
+    $sql = "SELECT SUM(count) AS total_entries
+            FROM skills
+            WHERE job='$job'";
+    $total_entries = mysqli_fetch_row($conn->query($sql))[0];
+
+    $sql = "SELECT skill, count FROM $tablename
             WHERE job = '$job'
             ORDER BY count DESC";
     $associatedSkills = $conn->query($sql);
     $returnString = "";
     foreach($associatedSkills as $row){
-        $returnString .= $row['skill'] . ",";
+        $returnString .= $row['skill'] . " (" . round($row['count']/$total_entries, 2) . "%),";
     }
 
     echo $returnString;
