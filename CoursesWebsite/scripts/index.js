@@ -13,7 +13,7 @@
                     var newTag = document.createElement("a");
 
                     var lastSpaceIndex = associatedJobs[i].lastIndexOf(" ");
-                    newTag.href = "index.php?job=" + associatedJobs[i].substring(0, lastSpaceIndex);
+                    newTag.href = "explore.php?job=" + associatedJobs[i].substring(0, lastSpaceIndex);
                     newTag.className = "content-tag dark-green";
                     newTag.innerHTML = associatedJobs[i];
                     contentCard.append(newTag);
@@ -38,7 +38,7 @@ function getAssociatedSkills() {
                     var newTag = document.createElement("a");
 
                     var lastSpaceIndex = associatedSkills[i].lastIndexOf(" ");
-                    newTag.href = "index.php?skill=" + associatedSkills[i].substring(0, lastSpaceIndex);
+                    newTag.href = "explore.php?skill=" + associatedSkills[i].substring(0, lastSpaceIndex);
                     newTag.className = "content-tag dark-green";
                     newTag.innerHTML = associatedSkills[i];
                     contentCard.append(newTag);

@@ -17,7 +17,7 @@
                     }
 
                     var jobEntry = newTableRow.insertCell(0);
-                    jobEntry.innerHTML = '<a href="index.php?job=' + rowJob + '">' + rowJob + '</a>';
+                    jobEntry.innerHTML = '<a href="explore.php?job=' + rowJob + '">' + rowJob + '</a>';
 
                     var countEntry = newTableRow.insertCell(1);
                     countEntry.innerHTML = rowCount;
@@ -46,7 +46,7 @@ function getTopFiveSkills() {
                     }
 
                     var skillEntry = newTableRow.insertCell(0);
-                    skillEntry.innerHTML = '<a href="index.php?skill=' + rowSkill + '">' + rowSkill + '</a>';
+                    skillEntry.innerHTML = '<a href="explore.php?skill=' + rowSkill + '">' + rowSkill + '</a>';
 
                     var countEntry = newTableRow.insertCell(1);
                     countEntry.innerHTML = rowCount;

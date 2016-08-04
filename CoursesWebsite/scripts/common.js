@@ -32,7 +32,7 @@ function searchForSkill() {
         type: 'GET',
         success: function (output) {
             if (output > 0) {
-                window.location.href = "index.php?skill=" + searchTerm;
+                window.location.href = "explore.php?skill=" + searchTerm;
             }
         }
     })
@@ -53,7 +53,7 @@ function searchForJob() {
         type: 'GET',
         success: function (output) {
             if (output > 0) {
-                window.location.href = "index.php?job=" + searchTerm;
+                window.location.href = "explore.php?job=" + searchTerm;
             }
         }
     })

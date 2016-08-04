@@ -19,9 +19,9 @@
     <IncludeDebugInformation>false</IncludeDebugInformation>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="home.php" />
+    <Compile Include="index.html" />
     <Compile Include="server.php" />
-    <Compile Include="index.php" />
+    <Compile Include="explore.php" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\home.css" />
