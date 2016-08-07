@@ -175,7 +175,7 @@ function GetAverageSalary(){
 function SearchForJob(){
     global $dataTable, $jobIndexTable, $conn, $job;
 
-    $sql = "SELECT job FROM $dataTable
+    $sql = "SELECT COUNT(*) FROM $dataTable
             JOIN $jobIndexTable ON $jobIndexTable.job_id = $dataTable.job_id
             WHERE job = '$job'
             LIMIT 1";
@@ -189,7 +189,7 @@ function SearchForJob(){
 function SearchForSkill(){
     global $dataTable, $skillIndexTable, $conn, $skill;
 
-    $sql = "SELECT job AS numResults FROM $dataTable
+    $sql = "SELECT COUNT(*) AS numResults FROM $dataTable
             JOIN $skillIndexTable ON $skillIndexTable.skill_id = $dataTable.skill_id
             WHERE skill = '$skill'
             LIMIT 1";
