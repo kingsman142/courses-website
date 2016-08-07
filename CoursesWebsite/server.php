@@ -57,7 +57,7 @@ function UpdateDatabase(){
     $sql = "INSERT INTO $skillIndexTable (skill)
             SELECT '$skill'
             WHERE NOT EXISTS (SELECT '$skill' FROM $skillIndexTable
-                              WHERE job = '$skill')";
+                              WHERE skill = '$skill')";
     $conn->query($sql);
 
     $sql = "INSERT INTO $dataTable (job_id, skill_id, salary)
