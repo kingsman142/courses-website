@@ -143,18 +143,22 @@ function GetAssociatedSkills(){
 }
 
 function GetAverageSalary(){
-    global $dataTable, $conn, $job, $skill;
+    global $dataTable, $skillIndexTable, $jobIndexTable, $conn, $job, $skill;
 
     $sql = null;
 
     if(!empty($skill)){
-        $sql = "SELECT ROUND(SUM((average_salary)*salary_entries)/SUM(salary_entries), 2) AS average_salary
-                FROM skills
-                WHERE skill='$skill'";
+        $sql = "SELECT ROUND(SUM(salary)/COUNT(*)) AS average_salary
+                FROM $dataTable
+                JOIN $skillIndexTable ON $skillIndexTable.skill_id = $dataTable.skill_id
+                WHERE skill='$skill'
+                AND salary > 0";
     } else if(!empty($job)){
-        $sql = "SELECT ROUND(SUM((average_salary)*salary_entries)/SUM(salary_entries), 2) AS average_salary
-                FROM skills
-                WHERE job='$job'";
+        $sql = "SELECT ROUND(SUM(salary)/COUNT(*)) AS average_salary
+                FROM $dataTable
+                JOIN $jobIndexTable ON $jobIndexTable.job_id = $dataTable.job_id
+                WHERE job='$job'
+                AND salary > 0";
     }
 
     if($sql != null){
@@ -169,10 +173,12 @@ function GetAverageSalary(){
 }
 
 function SearchForJob(){
-    global $dataTable, $conn, $job;
+    global $dataTable, $jobIndexTable, $conn, $job;
 
-    $sql = "SELECT COUNT(*) AS numResults FROM $dataTable
-            WHERE job = '$job'";
+    $sql = "SELECT job FROM $dataTable
+            JOIN $jobIndexTable ON $jobIndexTable.job_id = $dataTable.job_id
+            WHERE job = '$job'
+            LIMIT 1";
     $results = $conn->query($sql);
     $returnRow = mysqli_fetch_row($results);
     $numResults = $returnRow[0];
@@ -181,10 +187,12 @@ function SearchForJob(){
 }
 
 function SearchForSkill(){
-    global $dataTable, $conn, $skill;
+    global $dataTable, $skillIndexTable, $conn, $skill;
 
-    $sql = "SELECT COUNT(*) AS numResults FROM $dataTable
-            WHERE skill = '$skill'";
+    $sql = "SELECT job AS numResults FROM $dataTable
+            JOIN $skillIndexTable ON $skillIndexTable.skill_id = $dataTable.skill_id
+            WHERE skill = '$skill'
+            LIMIT 1";
     $results = $conn->query($sql);
     $returnRow = mysqli_fetch_row($results);
     $numResults = $returnRow[0];
