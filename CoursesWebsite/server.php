@@ -68,8 +68,9 @@ function UpdateDatabase(){
 }
 
 function GetTopFiveJobs(){
-    global $dataTable, $conn;
-    $sql = "SELECT job, SUM(count) AS total FROM $dataTable
+    global $dataTable, $jobIndexTable, $conn;
+    $sql = "SELECT job, COUNT(*) AS total FROM $dataTable
+            JOIN $jobIndexTable ON $jobIndexTable.job_id = $dataTable.job_id
             GROUP BY job
             ORDER BY total DESC, job DESC
             LIMIT 10";
@@ -82,8 +83,9 @@ function GetTopFiveJobs(){
 }
 
 function GetTopFiveSkills(){
-    global $dataTable, $conn;
-    $sql = "SELECT skill, SUM(count) as total FROM $dataTable
+    global $dataTable, $skillIndexTable, $conn;
+    $sql = "SELECT skill, COUNT(*) as total FROM $dataTable
+            JOIN $skillIndexTable ON $skillIndexTable.skill_id = $dataTable.skill_id
             GROUP BY skill
             ORDER BY total DESC, skill DESC
             LIMIT 10";
@@ -97,14 +99,16 @@ function GetTopFiveSkills(){
 }
 
 function GetAssociatedJobs(){
-    global $dataTable, $conn, $skill;
+    global $dataTable, $skillIndexTable, $jobIndexTable, $conn, $skill;
 
-    $sql = "SELECT SUM(count) AS total_entries
-            FROM skills
+    $sql = "SELECT COUNT(*) AS total_entries FROM $dataTable
+            JOIN $skillIndexTable ON $skillIndexTable.skill_id = $dataTable.skill_id
             WHERE skill='$skill'";
     $total_entries = mysqli_fetch_row($conn->query($sql))[0];
 
-    $sql = "SELECT job, count FROM $dataTable
+    $sql = "SELECT job, COUNT(*) AS count FROM $dataTable
+            JOIN $jobIndexTable ON $jobIndexTable.job_id = $dataTable.job_id
+            JOIN $skillIndexTable ON $skillIndexTable.skill_id = $dataTable.skill_id
             WHERE skill = '$skill'
             ORDER BY count DESC";
     $associatedJobs = $conn->query($sql);
@@ -117,14 +121,16 @@ function GetAssociatedJobs(){
 }
 
 function GetAssociatedSkills(){
-    global $dataTable, $conn, $job;
+    global $dataTable, $jobIndexTable, $skillIndexTable, $conn, $job;
 
-    $sql = "SELECT SUM(count) AS total_entries
-            FROM skills
+    $sql = "SELECT COUNT(*) AS total_entries FROM $dataTable
+            JOIN $jobIndexTable ON $jobIndexTable.job_id = $dataTable.job_id
             WHERE job='$job'";
     $total_entries = mysqli_fetch_row($conn->query($sql))[0];
 
-    $sql = "SELECT skill, count FROM $dataTable
+    $sql = "SELECT skill, COUNT(*) AS count FROM $dataTable
+            JOIN $jobIndexTable ON $jobIndexTable.job_id = $dataTable.job_id
+            JOIN $skillIndexTable ON $skillIndexTable.skill_id = $dataTable.skill_id
             WHERE job = '$job'
             ORDER BY count DESC";
     $associatedSkills = $conn->query($sql);
