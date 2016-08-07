@@ -167,7 +167,6 @@ function GetAverageSalary(){
         if($avg_salary > 0) echo "$avg_salary";
         else echo "No salary data available";
     } else{
-        echo 5;
         echo "No salary data available";
     }
 }
