@@ -3,7 +3,9 @@ $servername = "DESKTOP-05D9CV7";
 $username = "kingsman142";
 $password = "abcd";
 $dbname = "skillsset";
-$tablename = "skills";
+$dataTablename = "job_skill_data";
+$jobIndexTablename = "job_index";
+$skillIndexTablename = "skill_index";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -42,9 +44,9 @@ switch($functionCall){
 }
 
 function UpdateDatabase(){
-    global $tablename, $conn, $skill, $job, $salary;
+    global $dataTablename, $conn, $skill, $job, $salary;
 
-    $sql = "SELECT 1 FROM $tablename
+    $sql = "SELECT 1 FROM $dataTablename
             WHERE skill = '$skill'
             AND job = '$job'";
 
@@ -54,20 +56,20 @@ function UpdateDatabase(){
 
     if($numRows == 1){
         echo "<br/>Updating entry.";
-        $sql = "UPDATE $tablename
+        $sql = "UPDATE $dataTablename
                 SET count = count+1
                 WHERE skill = '$skill'
                 AND job = '$job';";
         $conn->query($sql);
 
         if(!empty($salary)){
-            $sql = "UPDATE $tablename
+            $sql = "UPDATE $dataTablename
                     SET average_salary=(salary_entries*average_salary + $salary)/(salary_entries+1)
                     WHERE skill = '$skill'
                     AND job = '$job';";
             $conn->query($sql);
 
-            $sql = "UPDATE $tablename
+            $sql = "UPDATE $dataTablename
                     SET salary_entries = salary_entries+1
                     WHERE skill = '$skill'
                     AND job = '$job'";
@@ -77,15 +79,15 @@ function UpdateDatabase(){
         echo "<br/>Adding new entry.";
         if(empty($salary)) $salary = 0;
 
-        $sql = "INSERT INTO $tablename (skill, job, count, average_salary, salary_entries)
+        $sql = "INSERT INTO $dataTablename (skill, job, count, average_salary, salary_entries)
                 VALUES ('$skill', '$job', 1, $salary, 0)";
         $conn->query($sql);
     }
 }
 
 function GetTopFiveJobs(){
-    global $tablename, $conn;
-    $sql = "SELECT job, SUM(count) AS total FROM $tablename
+    global $dataTablename, $conn;
+    $sql = "SELECT job, SUM(count) AS total FROM $dataTablename
             GROUP BY job
             ORDER BY total DESC, job DESC
             LIMIT 10";
@@ -98,8 +100,8 @@ function GetTopFiveJobs(){
 }
 
 function GetTopFiveSkills(){
-    global $tablename, $conn;
-    $sql = "SELECT skill, SUM(count) as total FROM $tablename
+    global $dataTablename, $conn;
+    $sql = "SELECT skill, SUM(count) as total FROM $dataTablename
             GROUP BY skill
             ORDER BY total DESC, skill DESC
             LIMIT 10";
@@ -113,14 +115,14 @@ function GetTopFiveSkills(){
 }
 
 function GetAssociatedJobs(){
-    global $tablename, $conn, $skill;
+    global $dataTablename, $conn, $skill;
 
     $sql = "SELECT SUM(count) AS total_entries
             FROM skills
             WHERE skill='$skill'";
     $total_entries = mysqli_fetch_row($conn->query($sql))[0];
 
-    $sql = "SELECT job, count FROM $tablename
+    $sql = "SELECT job, count FROM $dataTablename
             WHERE skill = '$skill'
             ORDER BY count DESC";
     $associatedJobs = $conn->query($sql);
@@ -133,14 +135,14 @@ function GetAssociatedJobs(){
 }
 
 function GetAssociatedSkills(){
-    global $tablename, $conn, $job;
+    global $dataTablename, $conn, $job;
 
     $sql = "SELECT SUM(count) AS total_entries
             FROM skills
             WHERE job='$job'";
     $total_entries = mysqli_fetch_row($conn->query($sql))[0];
 
-    $sql = "SELECT skill, count FROM $tablename
+    $sql = "SELECT skill, count FROM $dataTablename
             WHERE job = '$job'
             ORDER BY count DESC";
     $associatedSkills = $conn->query($sql);
@@ -153,7 +155,7 @@ function GetAssociatedSkills(){
 }
 
 function GetAverageSalary(){
-    global $tablename, $conn, $job, $skill;
+    global $dataTablename, $conn, $job, $skill;
 
     $sql = null;
 
@@ -179,9 +181,9 @@ function GetAverageSalary(){
 }
 
 function SearchForJob(){
-    global $tablename, $conn, $job;
+    global $dataTablename, $conn, $job;
 
-    $sql = "SELECT COUNT(*) AS numResults FROM $tablename
+    $sql = "SELECT COUNT(*) AS numResults FROM $dataTablename
             WHERE job = '$job'";
     $results = $conn->query($sql);
     $returnRow = mysqli_fetch_row($results);
@@ -191,9 +193,9 @@ function SearchForJob(){
 }
 
 function SearchForSkill(){
-    global $tablename, $conn, $skill;
+    global $dataTablename, $conn, $skill;
 
-    $sql = "SELECT COUNT(*) AS numResults FROM $tablename
+    $sql = "SELECT COUNT(*) AS numResults FROM $dataTablename
             WHERE skill = '$skill'";
     $results = $conn->query($sql);
     $returnRow = mysqli_fetch_row($results);
