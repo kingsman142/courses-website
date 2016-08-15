@@ -48,6 +48,10 @@
                     <div class="content-card red" id="average-salary">
                         <div class="card-title">Average salary</div>
                     </div>
+
+                    <div class="content-card yellow" id="min-max-salary">
+                        <div class="card-title">Minimum and Maximum Salaries</div>
+                    </div>
                 </div>
 
                 <div class="column" id="middle-column">
