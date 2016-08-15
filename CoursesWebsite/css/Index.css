@@ -2,6 +2,7 @@
     text-decoration: underline;
     margin-bottom: 8px;
     display: block;
+    text-align: left;
 }
 
 .column{
@@ -81,6 +82,12 @@
         background-color: #6e46b9;
     }
 
+.salary-value{
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
 #forms-wrapper > input{
     width: 369px;
     margin-left: 0px;
@@ -115,8 +122,10 @@
     font-size: 76.7px;
 }
 
-#salary-value{
+#min-max-salary{
     text-align: center;
-    margin-bottom: 10px;
-    font-size: 28px;
+}
+
+#minimum-salary, #maximum-salary{
+    
 }
