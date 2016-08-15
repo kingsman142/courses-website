@@ -39,6 +39,12 @@ switch($functionCall){
     case 'GetAverageSalary':
         GetAverageSalary();
         break;
+    case 'GetMinimumSalary':
+        GetMinimumSalary();
+        break;
+    case 'GetMaximumSalary':
+        GetMaximumSalary();
+        break;
     default:
         break;
 }
@@ -170,6 +176,58 @@ function GetAverageSalary(){
         else echo "No salary data available";
     } else{
         echo "No salary data available";
+    }
+}
+
+function GetMinimumSalary(){
+    global $dataTable, $skillIndexTable, $jobIndexTable, $conn, $job, $skill;
+
+    $sql = null;
+
+    if(!empty($skill)){
+        $sql = "SELECT MIN(salary) AS min_salary
+                FROM $dataTable
+                JOIN $skillIndexTable ON $skillIndexTable.skill_id = $dataTable.skill_id
+                WHERE skill='$skill'
+                AND salary > 0";
+    } else if(!empty($job)){
+        $sql = "SELECT MIN(salary) AS min_salary
+                FROM $dataTable
+                JOIN $jobIndexTable ON $jobIndexTable.job_id = $dataTable.job_id
+                WHERE job='$job'
+                AND salary > 0";
+    }
+
+    if($sql != null){
+        $min_salary = mysqli_fetch_row($conn->query($sql))[0];
+
+        if(!empty($min_salary)) echo "$min_salary";
+        else echo "No salary data available";
+    }
+}
+
+function GetMaximumSalary(){
+    global $dataTable, $skillIndexTable, $jobIndexTable, $conn, $job, $skill;
+
+    $sql = null;
+
+    if(!empty($skill)){
+        $sql = "SELECT MAX(salary) AS max_salary
+                FROM $dataTable
+                JOIN $skillIndexTable ON $skillIndexTable.skill_id = $dataTable.skill_id
+                WHERE skill='$skill'";
+    } else if(!empty($job)){
+        $sql = "SELECT MAX(salary) AS max_salary
+                FROM $dataTable
+                JOIN $jobIndexTable ON $jobIndexTable.job_id = $dataTable.job_id
+                WHERE job='$job'";
+    }
+
+    if($sql != null){
+        $max_salary = mysqli_fetch_row($conn->query($sql))[0];
+
+        if(!empty($max_salary)) echo "$max_salary";
+        else echo "No salary data available";
     }
 }
 
