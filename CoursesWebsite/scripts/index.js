@@ -70,17 +70,63 @@ function getAverageSalary() {
         type: "GET",
         success: function (output) {
             var salaryContentCard = $("#average-salary");
-            output = parseInt(output);
+            var averageSalary = parseInt(output);
 
             if (salaryContentCard) {
                 var salaryDiv = document.createElement("div");
-                salaryDiv.id = "salary-value";
-                if (output > 0) salaryDiv.innerHTML = "$" + output.toLocaleString();
+                salaryDiv.className = "salary-value";
+                if (averageSalary > 0) salaryDiv.innerHTML = "$" + averageSalary.toLocaleString();
                 else salaryDiv.innerHTML = output;
                 salaryContentCard.append(salaryDiv);
             }
         }
     });
+}
+
+function getMinMaxSalaries() {
+    var jobOrSkill = $("#index-title span")[0].innerHTML;
+    var jobOrSkillValue = $("#index-title b")[0].innerHTML;
+
+    var minMaxSalaryContentCard = $("#min-max-salary");
+
+    if (minMaxSalaryContentCard) {
+        $.ajax({
+            url: "server.php?function=GetMinimumSalary&" + jobOrSkill.toLowerCase() + "=" + jobOrSkillValue,
+            type: "GET",
+            success: function (minimumSalary) {
+                var minimumSalaryValue = parseInt(minimumSalary);
+
+                $.ajax({
+                    url: "server.php?function=GetMaximumSalary&" + jobOrSkill.toLowerCase() + "=" + jobOrSkillValue,
+                    type: "GET",
+                    success: function (maximumSalary) {
+                        var maximumSalaryValue = parseInt(maximumSalary);
+
+                        if (minimumSalaryValue == maximumSalaryValue || (isNaN(minimumSalaryValue) && isNaN(maximumSalaryValue))) {
+                            var salaryDiv = document.createElement("div");
+                            salaryDiv.id = "matching-salaries";
+
+                            if (isNaN(minimumSalaryValue)) salaryDiv.innerHTML = "<span class='salary-value'>" + minimumSalary + "</span>";
+                            else salaryDiv.innerHTML = "Only salary: &emsp; <span class='salary-value'>$" + maximumSalaryValue.toLocaleString() + "</span>";
+
+                            minMaxSalaryContentCard.append(salaryDiv);
+                        } else {
+                            var minimumSalaryDiv = document.createElement("div");
+                            minimumSalaryDiv.id = "minimum-salary";
+                            minimumSalaryDiv.innerHTML = "Min: &emsp; <span class='salary-value'>$" + minimumSalaryValue.toLocaleString() + "</span>";
+
+                            var maximumSalaryDiv = document.createElement("div");
+                            maximumSalaryDiv.id = "maximum-salary";
+                            maximumSalaryDiv.innerHTML = "Max: &emsp; <span class='salary-value'>$" + maximumSalaryValue.toLocaleString() + "</span>";
+
+                            minMaxSalaryContentCard.append(minimumSalaryDiv);
+                            minMaxSalaryContentCard.append(maximumSalaryDiv);
+                        }
+                    }
+                });
+            }
+        });
+    }
 }
 
 function setUpNewEntryForms() {
@@ -98,5 +144,6 @@ function setUpNewEntryForms() {
 $(document).ready(function () {
     getAssociatedTags();
     getAverageSalary();
+    getMinMaxSalaries();
     setUpNewEntryForms();
 });
