@@ -110,6 +110,7 @@ function GetAssociatedJobs(){
             JOIN $jobIndexTable ON $jobIndexTable.job_id = $dataTable.job_id
             JOIN $skillIndexTable ON $skillIndexTable.skill_id = $dataTable.skill_id
             WHERE skill = '$skill'
+            GROUP BY job
             ORDER BY count DESC";
     $associatedJobs = $conn->query($sql);
     $returnString = "";
@@ -132,6 +133,7 @@ function GetAssociatedSkills(){
             JOIN $jobIndexTable ON $jobIndexTable.job_id = $dataTable.job_id
             JOIN $skillIndexTable ON $skillIndexTable.skill_id = $dataTable.skill_id
             WHERE job = '$job'
+            GROUP BY skill
             ORDER BY count DESC";
     $associatedSkills = $conn->query($sql);
     $returnString = "";
