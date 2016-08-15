@@ -1,6 +1,14 @@
-﻿#forms-wrapper{
+﻿.required-field{
+    color: red;
+}
+
+#forms-wrapper{
     margin-top: 125px;
 }
+    #forms-wrapper > span{
+        font-size: 18px;
+        font-family: Cloud-Light;
+    }
 
 #job-title{
     display: inline;
@@ -11,4 +19,14 @@
     display: inline;
     margin-left: -60px;
     font-family: Code-Bold;
+}
+
+#occupation-required-text{
+    float: left;
+    margin-left: 325px;
+}
+
+#skill-required-text{
+    float: right;
+    margin-right: 325px;
 }

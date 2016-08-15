@@ -22,10 +22,13 @@
             </div>
 
             <div id="forms-wrapper">
-                <input class="new-entry-input job-input" placeholder="Occupation" />
-                <input class="new-entry-input skill-input" placeholder="Skill" />
+                <span class="required-field" id="occupation-required-text">Occupation is required</span>
+                <span class="required-field" id="skill-required-text">Skill is required</span>
+                <br/>
+                <input class="new-entry-input job-input" placeholder="Occupation">
+                <input class="new-entry-input skill-input" placeholder="Skill">
                 <br />
-                <input type="number" max="999999" min="0" class="new-entry-input salary-input" placeholder="Salary (yearly)" />
+                <input type="number" max="999999" min="0" class="new-entry-input salary-input" placeholder="Salary (yearly)">
                 <br />
                 <button type="submit" id="update-database" onclick="updateDatabase()">Help others find a career path!</button>
             </div>
