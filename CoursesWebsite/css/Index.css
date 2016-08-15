@@ -126,6 +126,6 @@
     text-align: center;
 }
 
-#minimum-salary, #maximum-salary{
-    
+#minimum-salary, #maximum-salary, #matching-salaries{
+    margin-bottom: 10px;
 }
