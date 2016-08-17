@@ -66,3 +66,15 @@ function enterKey(event) {
         return false;
     }
 }
+
+$(document).ready(function () {
+    $(".new-entry-input").on("keyup", function () {
+        if (this.value.length > 0) {
+            if ($(this).hasClass("job-input")) $("#occupation-required-text")[0].style.visibility = "hidden";
+            else if ($(this).hasClass("skill-input")) $("#skill-required-text")[0].style.visibility = "hidden";
+        } else {
+            if ($(this).hasClass("job-input")) $("#occupation-required-text")[0].style.visibility = "visible";
+            else if ($(this).hasClass("skill-input")) $("#skill-required-text")[0].style.visibility = "visible";
+        }
+    });
+});
