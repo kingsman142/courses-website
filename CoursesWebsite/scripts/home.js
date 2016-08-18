@@ -58,10 +58,15 @@ function getTopFiveSkills() {
 
 $(function () {
     $(".new-entry-input").bind("keyup focusout", function () {
-        if (this.type != "number") {
+        if (this.type == "text") {
             var val = $(this).val();
             if (val.match(/[^a-zA-Z]/g)) {
                 $(this).val(val.replace(/[^a-zA-Z]/g, ''));
+            }
+        } else if (this.type == "number") {
+            var val = $(this).val();
+            if (val.match(/[^0-9]/g)) {
+                $(this).val(val.replace(/[^0-9]/g, ''));
             }
         }
 
