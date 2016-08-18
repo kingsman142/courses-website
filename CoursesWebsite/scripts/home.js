@@ -56,6 +56,18 @@ function getTopFiveSkills() {
     })
 }
 
+$(function () {
+    $(".new-entry-input").on("keyup", function () {
+        if (this.value.trim().length) {
+            if ($(this).hasClass("job-input")) $("#occupation-required-text")[0].style.visibility = "hidden";
+            else if ($(this).hasClass("skill-input")) $("#skill-required-text")[0].style.visibility = "hidden";
+        } else {
+            if ($(this).hasClass("job-input")) $("#occupation-required-text")[0].style.visibility = "visible";
+            else if ($(this).hasClass("skill-input")) $("#skill-required-text")[0].style.visibility = "visible";
+        }
+    });
+});
+
 $(document).ready(function () {
     getTopFiveJobs();
     getTopFiveSkills();
