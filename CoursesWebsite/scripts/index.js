@@ -138,8 +138,47 @@ function setUpNewEntryForms() {
         var jobOrSkillValue = $("#index-title b")[0].innerHTML;
         inputForm = inputForm[0];
         inputForm.value = jobOrSkillValue;
+        
+        inputForm.style.transition = "all 0s";
+        inputForm.style.borderColor = "white";
+
+        $(inputForm).focus(function () {
+            this.style.borderColor = "rgb(0, 208, 0)";
+        });
+
+        $(inputForm).focusout(function () {
+            this.style.borderColor = "white";
+        });
     }
+
+    inputForm.style.transition = "0.5s";
 }
+
+$(function () {
+    $(".new-entry-input").on("keyup", function () {
+        if (this.value.trim().length && ($(this).hasClass("job-input") || $(this).hasClass("skill-input"))) {
+            this.style.borderColor = "rgb(0, 208, 0)";
+
+            $(this).focus(function () {
+                this.style.borderColor = "rgb(0, 208, 0)";
+            });
+
+            $(this).focusout(function () {
+                this.style.borderColor = "white";
+            });
+        } else if(!this.value.trim().length && ($(this).hasClass("job-input") || $(this).hasClass("skill-input"))) {
+            this.style.borderColor = "#D00000";
+
+            $(this).focus(function () {
+                this.style.borderColor = "#D00000";
+            });
+
+            $(this).focusout(function () {
+                this.style.borderColor = "#D00000";
+            });
+        }
+    });
+});
 
 $(document).ready(function () {
     getAssociatedTags();

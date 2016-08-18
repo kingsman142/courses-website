@@ -82,6 +82,10 @@
         background-color: #6e46b9;
     }
 
+.new-entry-input.job-input, .new-entry-input.skill-input{
+    border: 2px solid #D00000;
+}
+
 .salary-value{
     text-align: center;
     margin-bottom: 10px;
