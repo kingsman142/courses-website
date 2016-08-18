@@ -1,9 +1,9 @@
 ﻿function updateDatabase() {
     var job = $('.new-entry-input.job-input')[0].value.trim();
     var skill = $('.new-entry-input.skill-input')[0].value.trim();
-    var salary = $('.new-entry-input.salary-input')[0].value;
+    var salary = $('.new-entry-input.salary-input')[0].checkValidity() ? $('.new-entry-input.salary-input')[0].value : null;
 
-    if (job.length && skill.length) {
+    if (job.length && skill.length && salary != null) {
         $("#update-database")[0].disabled = true;
         $.ajax({
             url: 'server.php?function=UpdateDatabase&skill=' + skill + '&job=' + job + '&salary=' + salary,
