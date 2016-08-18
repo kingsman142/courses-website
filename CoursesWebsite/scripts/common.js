@@ -3,18 +3,20 @@
     var skill = $('.new-entry-input.skill-input')[0].value;
     var salary = $('.new-entry-input.salary-input')[0].value;
 
-    $("#update-database")[0].disabled = true;
-    $.ajax({
-        url: 'server.php?function=UpdateDatabase&skill=' + skill + '&job=' + job + '&salary=' + salary,
-        type: 'GET',
-        success: function (output) {
-            setTimeout(
-                function () {
-                    $("#update-database")[0].disabled = false;
-                },
-            2000);
-        }
-    });
+    if (job.trim().length && skill.trim().length) {
+        $("#update-database")[0].disabled = true;
+        $.ajax({
+            url: 'server.php?function=UpdateDatabase&skill=' + skill + '&job=' + job + '&salary=' + salary,
+            type: 'GET',
+            success: function (output) {
+                setTimeout(
+                    function () {
+                        $("#update-database")[0].disabled = false;
+                    },
+                2000);
+            }
+        });
+    }
 }
 
 function searchForSkill() {
@@ -69,7 +71,7 @@ function enterKey(event) {
 
 $(document).ready(function () {
     $(".new-entry-input").on("keyup", function () {
-        if (this.value.length > 0) {
+        if (this.value.length > 0 && this.value.trim().length) {
             if ($(this).hasClass("job-input")) $("#occupation-required-text")[0].style.visibility = "hidden";
             else if ($(this).hasClass("skill-input")) $("#skill-required-text")[0].style.visibility = "hidden";
         } else {
