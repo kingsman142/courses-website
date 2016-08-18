@@ -155,7 +155,14 @@ function setUpNewEntryForms() {
 }
 
 $(function () {
-    $(".new-entry-input").on("keyup", function () {
+    $(".new-entry-input").bind("keyup focusout", function () {
+        if (this.type != "number") {
+            var val = $(this).val();
+            if (val.match(/[^a-zA-Z]/g)) {
+                $(this).val(val.replace(/[^a-zA-Z]/g, ''));
+            }
+        }
+
         if (this.value.trim().length && ($(this).hasClass("job-input") || $(this).hasClass("skill-input"))) {
             this.style.borderColor = "rgb(0, 208, 0)";
 
