@@ -60,8 +60,8 @@ $(function () {
     $(".new-entry-input").bind("keyup focusout", function () {
         if (this.type == "text") {
             var val = $(this).val();
-            if (val.match(/[^a-zA-Z]/g)) {
-                $(this).val(val.replace(/[^a-zA-Z]/g, ''));
+            if (val.match(/[^a-zA-Z\040]/g)) {
+                $(this).val(val.replace(/[^a-zA-Z\040]/g, ''));
             }
         } else if (this.type == "number") {
             var val = $(this).val();
