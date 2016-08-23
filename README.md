@@ -3,7 +3,7 @@
 This repo is for my courses website project utilizing MySQL, PHP, HTML, and JavaScript.
 
 Home page:
-<img src="http://imgur.com/3PQs74J" />
+![home page](http://i.imgur.com/3PQs74J.png)
 
 Explore page:
-<img src="http://imgur.com/DuAC2uk" />
+![explore page](http://i.imgur.com/DuAC2uk.png)
