@@ -1,6 +1,6 @@
-# Courses Website
+# Job Explore Website
 
-This repo is for my courses website project utilizing MySQL, PHP, HTML, and JavaScript.
+This repo is for my courses website project utilizing MySQL, PHP, HTML, and JavaScript.  Career website that will help career seekers search for skills they find and matching jobs.
 
 Website can be found at: http://www.jobexplore.rf.gd/
 
