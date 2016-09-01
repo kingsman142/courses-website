@@ -10,9 +10,9 @@ $skillIndexTable = "skill_index";
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 $functionCall = isset($_GET['function']) ? filter_input(INPUT_GET, 'function') : null;
-$skill = isset($_GET['skill']) ? filter_input(INPUT_GET, 'skill') : null;
-$job = isset($_GET['job']) ? filter_input(INPUT_GET, 'job') : null;
-$salary = isset($_GET['salary']) ? filter_input(INPUT_GET, 'salary') : null;
+$skill = isset($_GET['skill']) ? strip_tags(filter_input(INPUT_GET, 'skill')) : null;
+$job = isset($_GET['job']) ? strip_tags(filter_input(INPUT_GET, 'job')) : null;
+$salary = isset($_GET['salary']) ? strip_tags(filter_input(INPUT_GET, 'salary')) : null;
 
 switch($functionCall){
     case 'UpdateDatabase':
