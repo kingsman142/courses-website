@@ -14,6 +14,14 @@ $skill = isset($_GET['skill']) ? $conn->real_escape_string(strip_tags(filter_inp
 $job = isset($_GET['job']) ? $conn->real_escape_string(strip_tags(filter_input(INPUT_GET, 'job'))) : null;
 $salary = isset($_GET['salary']) ? $conn->real_escape_string(strip_tags(filter_input(INPUT_GET, 'salary'))) : null;
 
+if(empty($skill) || empty($job)){
+    return;
+}
+
+if(!(is_numeric($value) && $value > 0 && $value == round($value, 0))){
+    $salary = 0;
+}
+
 switch($functionCall){
     case 'UpdateDatabase':
         updateDatabase();
