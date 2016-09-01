@@ -10,9 +10,9 @@ $skillIndexTable = "skill_index";
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 $functionCall = isset($_GET['function']) ? filter_input(INPUT_GET, 'function') : null;
-$skill = isset($_GET['skill']) ? strip_tags(filter_input(INPUT_GET, 'skill')) : null;
-$job = isset($_GET['job']) ? strip_tags(filter_input(INPUT_GET, 'job')) : null;
-$salary = isset($_GET['salary']) ? strip_tags(filter_input(INPUT_GET, 'salary')) : null;
+$skill = isset($_GET['skill']) ? $conn->real_escape_string(strip_tags(filter_input(INPUT_GET, 'skill'))) : null;
+$job = isset($_GET['job']) ? $conn->real_escape_string(strip_tags(filter_input(INPUT_GET, 'job'))) : null;
+$salary = isset($_GET['salary']) ? $conn->real_escape_string(strip_tags(filter_input(INPUT_GET, 'salary'))) : null;
 
 switch($functionCall){
     case 'UpdateDatabase':
@@ -54,22 +54,22 @@ function UpdateDatabase(){
 
     if(empty($salary)) $salary = 0;
 
-    $sql = "INSERT INTO $jobIndexTable (job)
-            SELECT '$job'
-            WHERE NOT EXISTS (SELECT '$job' FROM $jobIndexTable
-                              WHERE job = '$job')";
+    $sql = sprintf("INSERT INTO $jobIndexTable (job)
+            SELECT '%s'
+            WHERE NOT EXISTS (SELECT '%s' FROM $jobIndexTable
+                              WHERE job = '%s')", $job, $job, $job);
     $conn->query($sql);
 
-    $sql = "INSERT INTO $skillIndexTable (skill)
+    $sql = sprintf("INSERT INTO $skillIndexTable (skill)
             SELECT '$skill'
             WHERE NOT EXISTS (SELECT '$skill' FROM $skillIndexTable
-                              WHERE skill = '$skill')";
+                              WHERE skill = '$skill')", $skill, $skill, $skill);
     $conn->query($sql);
 
-    $sql = "INSERT INTO $dataTable (job_id, skill_id, salary)
-            VALUES ((SELECT job_id FROM $jobIndexTable WHERE job = '$job'),
-		            (SELECT skill_id FROM $skillIndexTable WHERE skill = '$skill'),
-                    $salary)";
+    $sql = sprintf("INSERT INTO $dataTable (job_id, skill_id, salary)
+            VALUES ((SELECT job_id FROM $jobIndexTable WHERE job = '%s'),
+		            (SELECT skill_id FROM $skillIndexTable WHERE skill = '%s'),
+                    $salary)", $job, $skill);
     $conn->query($sql);
 }
 
